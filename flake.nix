@@ -28,7 +28,11 @@
                   nil_ls.enable = true;
                   pyright.enable = true;
                   gopls.enable = true;
-                  rust-analyzer.enable = true;
+                  rust-analyzer = {
+                    enable = true;
+                    installRustc = false;
+                    installCargo = false;
+                  };
                   jsonls.enable = true;
                 };
               };
