@@ -9,7 +9,7 @@
       flake-utils.lib.eachDefaultSystem (
         system: let
           config = {
-            colorschemes.ayu.enable = true;
+            colorschemes.one.enable = true;
             plugins.nix.enable = true;
             plugins.nix-develop.enable = true;
             plugins.trouble.enable = true;
