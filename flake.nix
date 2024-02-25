@@ -9,7 +9,11 @@
       flake-utils.lib.eachDefaultSystem (
         system: let
           config = {
-            colorschemes.one.enable = true;
+            colorschemes.catppuccin = {
+              enable = true;
+              flavour = "mocha";
+              transparentBackground = true;
+            };
             plugins.nix.enable = true;
             plugins.nix-develop.enable = true;
             plugins.trouble.enable = true;
@@ -22,10 +26,30 @@
               "<leader>fh" = "help_tags";
             };
             plugins = {
+              refactoring.enable = true;
+              harpoon = {
+                enable = true;
+                enableTelescope = true;
+                keymaps = {
+                  addFile = "<leader>s";
+                  toggleQuickMenu = "<leader>d";
+                  navFile = {
+                    "1" = "&";
+                    "2" = "é";
+                    "3" = "\"";
+                    "4" = "'";
+                    "5" = "(";
+                    "6" = "§";
+                    "7" = "è";
+                    "8" = "!";
+                    "9" = "ç";
+                  };
+               };
+             };
               lsp = {
                 enable = true;
                 servers = {
-                  nil_ls.enable = true;
+                  nixd.enable = true;
                   pyright.enable = true;
                   gopls.enable = true;
                   rust-analyzer = {
@@ -34,8 +58,23 @@
                     installCargo = false;
                   };
                   jsonls.enable = true;
+                  yamlls.enable = true;
                 };
               };
+              nvim-cmp = {
+                enable = true;
+                snippet.expand = "luasnip";
+                sources = [
+                  {name = "nvim_lsp";}
+                  {name = "path";}
+                  {name = "buffer";}
+                ];
+                mapping = {
+                  "<CR>" = "cmp.mapping.confirm({select = true})";
+                };
+              };
+              luasnip.enable = true;
+              neogit.enable = true;
               lspkind = {
                 enable = true;
                 cmp = {
@@ -53,6 +92,7 @@
               };
               lsp-lines.enable = true;
             };
+            globals.mapleader = " ";
           };
           nixvim' = nixvim.legacyPackages."${system}";
           nvim = nixvim'.makeNixvim config;
