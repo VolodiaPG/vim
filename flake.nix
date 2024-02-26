@@ -136,6 +136,7 @@
             globals.mapleader = " ";
             extraPlugins = with pkgs.vimPlugins;[
               vim-just
+              virtual-types-nvim
             ];
             extraConfigLua= ''
               local lspconfig = require('lspconfig')
