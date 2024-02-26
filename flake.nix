@@ -9,6 +9,10 @@
       flake-utils.lib.eachDefaultSystem (
         system: let
           config = {
+            options = {
+              number = true;
+              relativenumber= true;
+            };
             colorschemes.catppuccin = {
               enable = true;
               flavour = "mocha";
