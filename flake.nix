@@ -8,7 +8,11 @@
     with inputs;
       flake-utils.lib.eachDefaultSystem (
         system: let
+          pkgs = nixpkgs.legacyPackages.${system};
           config = {
+            extraPackages = with pkgs;[
+              ripgrep
+            ];
             options = {
               number = true;
               relativenumber= true;
