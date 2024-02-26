@@ -10,15 +10,15 @@
         system: let
           pkgs = nixpkgs.legacyPackages.${system};
           config = {
-            extraPackages = with pkgs;[
+            extraPackages = with pkgs; [
               ripgrep
             ];
             options = {
               number = true;
-              relativenumber= true;
-              tabstop=4;
-              shiftwidth=4;
-              softtabstop=4;
+              relativenumber = true;
+              tabstop = 4;
+              shiftwidth = 4;
+              softtabstop = 4;
               expandtab = true;
               smartindent = true;
               wrap = false;
@@ -70,8 +70,8 @@
                     "8" = "!";
                     "9" = "ç";
                   };
-               };
-             };
+                };
+              };
               lsp = {
                 enable = true;
                 servers = {
@@ -94,6 +94,21 @@
                 #  "gi" = "implementation";
                 #  "K" = "hover";
                 #};
+              };
+              rust-tools = {
+                enable = true;
+                inlayHints = {
+                  auto = true;
+                  onlyCurrentLine = false;
+                  showParameterHints = true;
+                  parameterHintsPrefix = "<- ";
+                  otherHintsPrefix = "=> ";
+                  maxLenAlign = false;
+                  maxLenAlignPadding = 1;
+                  rightAlign = false;
+                  rightAlignPadding = 7;
+                  highlight = "Comment";
+                };
               };
               nvim-cmp = {
                 enable = true;
@@ -134,11 +149,11 @@
               lsp-format.enable = true;
             };
             globals.mapleader = " ";
-            extraPlugins = with pkgs.vimPlugins;[
+            extraPlugins = with pkgs.vimPlugins; [
               vim-just
               virtual-types-nvim
             ];
-            extraConfigLua= ''
+            extraConfigLua = ''
               local lspconfig = require('lspconfig')
               local capabilities = require('cmp_nvim_lsp').default_capabilities()
               lspconfig.r_language_server.setup({
