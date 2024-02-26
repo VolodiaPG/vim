@@ -68,6 +68,7 @@
               lsp = {
                 enable = true;
                 servers = {
+                  bashls.enable = true;
                   nixd.enable = true;
                   pyright.enable = true;
                   gopls.enable = true;
