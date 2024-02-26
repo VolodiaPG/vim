@@ -22,6 +22,17 @@
             plugins.nix-develop.enable = true;
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
+            plugins.cmp-treesitter.enable = true;
+            plugins.treesitter-refactor = {
+              enable = true;
+              highlightCurrentScope.enable = true;
+              highlightCurrentScope.disable = [
+                "nix"
+              ];
+              highlightDefinitions.enable = true;
+              navigation.enable = true;
+              smartRename.enable = true;
+            };
             plugins.telescope.enable = true;
             plugins.telescope.keymaps = {
               "<leader>ff" = "find_files";
