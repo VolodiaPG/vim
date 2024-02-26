@@ -79,6 +79,13 @@
                   jsonls.enable = true;
                   yamlls.enable = true;
                 };
+                #lspBuf = {
+                #  "gd" = "definition";
+                #  "gD" = "references";
+                #  "gt" = "type_definition";
+                #  "gi" = "implementation";
+                #  "K" = "hover";
+                #};
               };
               nvim-cmp = {
                 enable = true;
@@ -117,6 +124,15 @@
               lsp-format.enable = true;
             };
             globals.mapleader = " ";
+            extraConfigLua= ''
+              local lspconfig = require('lspconfig')
+              lspconfig.r_language_server.setup({
+                on_attach = on_attach_custom,
+                -- Debounce "textDocument/didChange" notifications because they are slowly
+                -- processed (seen when going through completion list with `<C-N>`)
+                flags = { debounce_text_changes = 150 },
+              })
+            '';
           };
           nixvim' = nixvim.legacyPackages."${system}";
           nvim = nixvim'.makeNixvim config;
