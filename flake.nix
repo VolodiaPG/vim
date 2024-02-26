@@ -16,6 +16,13 @@
             options = {
               number = true;
               relativenumber= true;
+              tabstop=4;
+              shiftwidth=4;
+              softtabstop=4;
+              expandtab = true;
+              smartindent = true;
+              wrap = false;
+              signcolumn = "yes";
             };
             colorschemes.catppuccin = {
               enable = true;
@@ -98,10 +105,12 @@
                 ];
                 mapping = {
                   "<CR>" = "cmp.mapping.confirm({select = true})";
+                  "<Tab>" = ''cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"})'';
+                  "<S-Tab>" = ''cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"})'';
                 };
               };
               luasnip.enable = true;
-              neogit.enable = true;
+              gitsigns.enable = true;
               lspkind = {
                 enable = true;
                 cmp = {
@@ -127,7 +136,6 @@
             globals.mapleader = " ";
             extraPlugins = with pkgs.vimPlugins;[
               vim-just
-              virtual-types-nvim
             ];
             extraConfigLua= ''
               local lspconfig = require('lspconfig')
