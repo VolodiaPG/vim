@@ -94,7 +94,10 @@
                   };
                 };
               };
-              lspsaga.enable = true;
+              lspsaga = {
+                enable = true;
+                lightbulb.sign = false;
+              };
               lsp-lines.enable = true;
               lsp-format.enable = true;
             };
