@@ -9,9 +9,23 @@
       flake-utils.lib.eachDefaultSystem (
         system: let
           pkgs = nixpkgs.legacyPackages.${system};
+          coc = import ./coc.nix;
+          cocSettings' = builtins.toFile "coc-settings.json" (builtins.toJSON (coc {}));
+          cocSettings = pkgs.stdenv.mkDerivation {
+            name = "coc-settings";
+            buildInputs = [pkgs.coreutils];
+            src = cocSettings';
+dontUnpack = true;
+
+            installPhase = ''
+              mkdir -p $out
+              cp $src $out/coc-settings.json
+            '';
+          };
           config = {
             extraPackages = with pkgs; [
               ripgrep
+              nil
             ];
             options = {
               number = true;
@@ -64,6 +78,7 @@
               gitsigns.enable = true;
             };
             globals.mapleader = " ";
+            globals.coc_config_home = "${cocSettings}";
             extraPlugins = with pkgs.vimPlugins; [
               vim-just
               coc-highlight
@@ -77,6 +92,7 @@
               coc-toml
               coc-r-lsp
               coc-diagnostic
+              coc-nvim
             ];
           };
           nixvim' = nixvim.legacyPackages."${system}";
