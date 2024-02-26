@@ -92,6 +92,7 @@
               };
               lspsaga.enable = true;
               lsp-lines.enable = true;
+              lsp-format.enable = true;
             };
             globals.mapleader = " ";
           };
