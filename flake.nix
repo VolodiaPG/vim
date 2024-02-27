@@ -41,7 +41,7 @@
             };
             colorschemes.catppuccin = {
               enable = true;
-              flavour = "mocha";
+              flavour = "latte";
               transparentBackground = true;
             };
             plugins.nix.enable = true;
