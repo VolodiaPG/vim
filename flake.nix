@@ -83,6 +83,10 @@
                         parameterNames = true;
                         rangeVariableTypes = true;
                       };
+onAttach.function = ''
+  local ih = require "inlay-hints"
+  ih.on_attach(client, bufnr)
+'';
                     };
                     rust-analyzer = {
                       enable = true;
