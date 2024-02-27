@@ -72,7 +72,14 @@
                     bashls.enable = true;
                     nixd.enable = true;
                     pyright.enable = true;
-                    gopls.enable = true;
+                    gopls = {
+                      enable = true;
+        extraOptions.ui.inlayhint.hints = {
+                      compositeLiteralFields = true;
+                      constatnValues=true;
+                      parameterNames = true;
+                    };
+                    };
                     rust-analyzer = {
                       enable = true;
                       installRustc = lib.mkForce false;
