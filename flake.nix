@@ -50,7 +50,7 @@
               plugins.cmp-treesitter.enable = true;
               plugins.treesitter-refactor = {
                 enable = true;
-                highlightCurrentScope.enable = true;
+                highlightCurrentScope.enable = false;
                 highlightCurrentScope.disable = [
                   "nix"
                 ];
@@ -66,26 +66,6 @@
               #  "<leader>fh" = "help_tags";
               #};
               plugins = {
-                refactoring.enable = true;
-                #harpoon = lib.mkForce {
-                #  enable = true;
-                #  enableTelescope = true;
-                #  keymaps = {
-                #    addFile = "<leader>s";
-                #    toggleQuickMenu = "<leader>d";
-                #    navFile = {
-                #      "1" = "&";
-                #      "2" = "é";
-                #      "3" = "\"";
-                #      "4" = "'";
-                #      "5" = "(";
-                #      "6" = "§";
-                #      "7" = "è";
-                #      "8" = "!";
-                #      "9" = "ç";
-                #    };
-                #  };
-                #};
                 lsp = {
                   enable = true;
                   servers = {
