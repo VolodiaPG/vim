@@ -3,7 +3,7 @@
     virtualText = true;
     virtualTextCurrentLineOnly = false;
   };
-  inlayHint.enable = true;
+  inlayHints.enable = true;
   languageserver = {
     nix = {
       command = "nil";
