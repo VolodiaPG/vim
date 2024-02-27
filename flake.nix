@@ -15,7 +15,7 @@
             name = "coc-settings";
             buildInputs = [pkgs.coreutils];
             src = cocSettings';
-dontUnpack = true;
+            dontUnpack = true;
 
             installPhase = ''
               mkdir -p $out
