@@ -16,6 +16,7 @@
             config = {
               extraPackages = with pkgs; [
                 ripgrep
+                statix
               ];
               options = {
                 number = true;
@@ -26,6 +27,14 @@
                 expandtab = true;
                 smartindent = true;
                 signcolumn = "yes";
+                 guicursor = lib.mkForce [
+        "n-v-c:block" # Normal, visual, command-line: block cursor
+        "i-ci-ve:ver100" # Insert, command-line insert, visual-exclude: vertical bar cursor with block cursor, use "ver25" for 25% width
+        "r-cr:hor20" # Replace, command-line replace: horizontal bar cursor with 20% height
+        "o:hor50" # Operator-pending: horizontal bar cursor with 50% height
+        "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor" # All modes: blinking settings
+        "sm:block-blinkwait175-blinkoff150-blinkon175" # Showmatch: block cursor with specific blinking settings
+      ];
               };
               colorschemes.catppuccin = {
                 enable = true;
@@ -174,6 +183,7 @@
             "keymaps.nix"
             "bufferlines/bufferline.nix"
             "completion/cmp.nix"
+            "completion/copilot.nix"
             "completion/lspkind.nix"
             "dap/dap.nix"
             "git/gitsigns.nix"
@@ -184,16 +194,37 @@
             "languages/treesitter/treesitter-textobjects.nix"
             "lsp/conform.nix"
             "lsp/fidget.nix"
+            "statusline/lualine.nix"
+            "statusline/staline.nix"
             "ui/alpha.nix"
             "ui/dressing-nvim.nix"
             "ui/indent-blankline.nix"
             "ui/noice.nix"
             "ui/nvim-notify.nix"
             "ui/nui.nix"
+            "utils/better-escape.nix"
+            "utils/flash.nix"
+            "utils/hardtime.nix"
             "utils/harpoon.nix"
+            "utils/illuminate.nix"
+            "utils/markdown-preview.nix"
+            "utils/mini.nix"
+            "utils/neodev.nix"
+            "utils/neotest.nix"
+            "utils/nvim-autopairs.nix"
+            "utils/nvim-colorizer.nix"
+            "utils/nvim-surround.nix"
+            "utils/oil.nix"
             "utils/persistence.nix"
+            "utils/plenary.nix"
+            "utils/project-nvim.nix"
+            "utils/tmux-navigator.nix"
+            "utils/todo-comments.nix"
             "utils/undotree.nix"
-            "utils/vim-be-good.nix"
+            "utils/ultimate-autopair.nix"
+            #"utils/vim-be-good.nix"
+            "utils/todo-comments.nix"
+            "utils/wilder.nix"
           ];
           whitelist = lib.lists.forEach whitelist' (x: import "${neveSource}/config/${x}");
           neveConfig = {imports = whitelist;};
