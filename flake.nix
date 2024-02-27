@@ -74,11 +74,15 @@
                     pyright.enable = true;
                     gopls = {
                       enable = true;
-        extraOptions.ui.inlayhint.hints = {
-                      compositeLiteralFields = true;
-                      constatnValues=true;
-                      parameterNames = true;
-                    };
+                      hints = {
+                        assignVariableTypes = true;
+                        compositeLiteralFields = true;
+                        compositeLiteralTypes = true;
+                        constantValues = true;
+                        functionTypeParameters = true;
+                        parameterNames = true;
+                        rangeVariableTypes = true;
+                      };
                     };
                     rust-analyzer = {
                       enable = true;
@@ -149,15 +153,15 @@
                 lsp-lines.enable = true;
                 harpoon.keymaps.addFile = lib.mkForce "<C-a>";
                 harpoon.keymaps.navFile = lib.mkForce {
-                    "1" = "&";
-                    "2" = "é";
-                    "3" = "\"";
-                    "4" = "'";
-                    "5" = "(";
-                    "6" = "§";
-                    "7" = "è";
-                    "8" = "!";
-                    "9" = "ç";
+                  "1" = "&";
+                  "2" = "é";
+                  "3" = "\"";
+                  "4" = "'";
+                  "5" = "(";
+                  "6" = "§";
+                  "7" = "è";
+                  "8" = "!";
+                  "9" = "ç";
                 };
                 #lsp-format.enable = true;
               };
