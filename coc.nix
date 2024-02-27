@@ -21,6 +21,7 @@
       renderColons = false;
       lifetimeElisionHints.enable = "skip_trivial";
       bindingModeHints.enable = true;
+      typeHints.enable = true;
     };
   };
   languageserver = {
