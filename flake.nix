@@ -1,8 +1,10 @@
 {
   description = "My nVIM config";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-  inputs.nixvim.url = "github:nix-community/nixvim";
   inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.nixvim.url = "github:nix-community/nixvim";
+  inputs.neveSource.url = "github:redyf/neve";
+  inputs.neveSource.flake = false;
 
   outputs = inputs:
     with inputs;
@@ -64,6 +66,12 @@
           '';
         in {
           formatter = nixpkgs.legacyPackages.${system}.alejandra;
+          checks = {
+            default = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
+              inherit nvim;
+              name = "Neve";
+            };
+          };
           packages = {
             inherit nvim;
             default = nvim;
