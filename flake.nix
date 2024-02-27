@@ -24,17 +24,19 @@
                 tabstop = lib.mkForce 4;
                 shiftwidth = lib.mkForce 4;
                 softtabstop = lib.mkForce 4;
+                showtabline = lib.mkForce 0;
                 expandtab = true;
                 smartindent = true;
                 signcolumn = "yes";
-                 guicursor = lib.mkForce [
-        "n-v-c:block" # Normal, visual, command-line: block cursor
-        "i-ci-ve:ver100" # Insert, command-line insert, visual-exclude: vertical bar cursor with block cursor, use "ver25" for 25% width
-        "r-cr:hor20" # Replace, command-line replace: horizontal bar cursor with 20% height
-        "o:hor50" # Operator-pending: horizontal bar cursor with 50% height
-        "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor" # All modes: blinking settings
-        "sm:block-blinkwait175-blinkoff150-blinkon175" # Showmatch: block cursor with specific blinking settings
-      ];
+                #laststatus = lib.mkForce 0;
+                guicursor = lib.mkForce [
+                  "n-v-c:block" # Normal, visual, command-line: block cursor
+                  "i-ci-ve:ver100" # Insert, command-line insert, visual-exclude: vertical bar cursor with block cursor, use "ver25" for 25% width
+                  "r-cr:hor20" # Replace, command-line replace: horizontal bar cursor with 20% height
+                  "o:hor50" # Operator-pending: horizontal bar cursor with 50% height
+                  "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor" # All modes: blinking settings
+                  "sm:block-blinkwait175-blinkoff150-blinkon175" # Showmatch: block cursor with specific blinking settings
+                ];
               };
               colorschemes.catppuccin = {
                 enable = true;
@@ -65,25 +67,25 @@
               #};
               plugins = {
                 refactoring.enable = true;
-                harpoon = lib.mkForce {
-                  enable = true;
-                  enableTelescope = true;
-                  keymaps = {
-                    addFile = "<leader>s";
-                    toggleQuickMenu = "<leader>d";
-                    navFile = {
-                      "1" = "&";
-                      "2" = "é";
-                      "3" = "\"";
-                      "4" = "'";
-                      "5" = "(";
-                      "6" = "§";
-                      "7" = "è";
-                      "8" = "!";
-                      "9" = "ç";
-                    };
-                  };
-                };
+                #harpoon = lib.mkForce {
+                #  enable = true;
+                #  enableTelescope = true;
+                #  keymaps = {
+                #    addFile = "<leader>s";
+                #    toggleQuickMenu = "<leader>d";
+                #    navFile = {
+                #      "1" = "&";
+                #      "2" = "é";
+                #      "3" = "\"";
+                #      "4" = "'";
+                #      "5" = "(";
+                #      "6" = "§";
+                #      "7" = "è";
+                #      "8" = "!";
+                #      "9" = "ç";
+                #    };
+                #  };
+                #};
                 lsp = {
                   enable = true;
                   servers = {
@@ -153,14 +155,26 @@
                     };
                   };
                 };
-                lspsaga = {
-                  enable = true;
-                  lightbulb.sign = false;
-                };
+                #                lspsaga = {
+                #                  enable = true;
+                #                  lightbulb.sign = false;
+                #                };
                 lsp-lines.enable = true;
+                harpoon.keymaps.addFile = lib.mkForce "<C-a>";
+                harpoon.keymaps.navFile = lib.mkForce {
+                    "1" = "&";
+                    "2" = "é";
+                    "3" = "\"";
+                    "4" = "'";
+                    "5" = "(";
+                    "6" = "§";
+                    "7" = "è";
+                    "8" = "!";
+                    "9" = "ç";
+                };
                 #lsp-format.enable = true;
               };
-              globals.mapleader = " ";
+              #globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
               ];
@@ -181,11 +195,11 @@
           whitelist' = [
             "sets.nix"
             "keymaps.nix"
-            "bufferlines/bufferline.nix"
+            #"bufferlines/bufferline.nix"
             "completion/cmp.nix"
             "completion/copilot.nix"
             "completion/lspkind.nix"
-            "dap/dap.nix"
+            #"dap/dap.nix"
             "git/gitsigns.nix"
             "git/diffview.nix"
             "languages/nvim-lint.nix"
@@ -204,26 +218,26 @@
             "ui/nui.nix"
             "utils/better-escape.nix"
             "utils/flash.nix"
-            "utils/hardtime.nix"
+            #"utils/hardtime.nix"
             "utils/harpoon.nix"
             "utils/illuminate.nix"
             "utils/markdown-preview.nix"
             "utils/mini.nix"
             "utils/neodev.nix"
-            "utils/neotest.nix"
-            "utils/nvim-autopairs.nix"
-            "utils/nvim-colorizer.nix"
-            "utils/nvim-surround.nix"
-            "utils/oil.nix"
-            "utils/persistence.nix"
+            #"utils/neotest.nix"
+            #"utils/nvim-autopairs.nix"
+            #"utils/nvim-colorizer.nix"
+            #"utils/nvim-surround.nix"
+            #"utils/oil.nix"
+            #"utils/persistence.nix"
             "utils/plenary.nix"
-            "utils/project-nvim.nix"
-            "utils/tmux-navigator.nix"
-            "utils/todo-comments.nix"
+            # "utils/project-nvim.nix"
+            #"utils/tmux-navigator.nix"
+            #"utils/todo-comments.nix"
             "utils/undotree.nix"
-            "utils/ultimate-autopair.nix"
+            #"utils/ultimate-autopair.nix"
             #"utils/vim-be-good.nix"
-            "utils/todo-comments.nix"
+            #"utils/todo-comments.nix"
             "utils/wilder.nix"
           ];
           whitelist = lib.lists.forEach whitelist' (x: import "${neveSource}/config/${x}");
