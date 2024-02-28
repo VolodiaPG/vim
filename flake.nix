@@ -107,18 +107,25 @@
                     highlight = "Comment";
                   };
                 };
-                harpoon.keymaps.addFile = lib.mkForce "<C-a>";
-                harpoon.keymaps.navFile = lib.mkForce {
-                  "1" = "&";
-                  "2" = "é";
-                  "3" = "\"";
-                  "4" = "'";
-                  "5" = "(";
-                  "6" = "§";
-                  "7" = "è";
-                  "8" = "!";
-                  "9" = "ç";
-                };
+                harpoon = {
+                enable = true;
+                enableTelescope = true;
+                keymaps = {
+                  addFile = "<leader>s";
+                  toggleQuickMenu = "<leader>d";
+                  navFile = {
+                    "1" = "&";
+                    "2" = "é";
+                    "3" = "\"";
+                    "4" = "'";
+                    "5" = "(";
+                    "6" = "§";
+                    "7" = "è";
+                    "8" = "!";
+                    "9" = "ç";
+                  };
+               };
+};
                 #lsp-format.enable = true;
                 lint.lintersByFt = lib.mkForce {
                   python = ["ruff"];
@@ -126,16 +133,7 @@
               };
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
-                               (pkgs.vimUtils.buildVimPlugin {
-                                 pname = "inlay-hints.nvim";
-                                 version = "v0.1-2023-10-18";
-                                 src = pkgs.fetchFromGitHub {
-                                   owner = "MysticalDevil";
-                                   repo = "inlay-hints.nvim";
-                                   rev = "c89185a55f0f9d3152554ae171fcd9b95a447362";
-                                   sha256 = "sha256-lNtO5TjTpYz/19VSy1vExxcd+dj8Yl1MFWaKsej/omM=";
-                                 };
-                               })
+                go-nvim
               ];
               extraConfigLua = ''
                 local lspconfig = require('lspconfig')
@@ -190,7 +188,6 @@
             "utils/better-escape.nix"
             "utils/flash.nix"
             #"utils/hardtime.nix"
-            "utils/harpoon.nix"
             "utils/illuminate.nix"
             "utils/markdown-preview.nix"
             "utils/mini.nix"
