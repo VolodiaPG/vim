@@ -169,7 +169,7 @@ onAttach.function = ''
                 };
                 #lsp-format.enable = true;
               };
-              #globals.mapleader = " ";
+              globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
                 (pkgs.vimUtils.buildVimPlugin {
