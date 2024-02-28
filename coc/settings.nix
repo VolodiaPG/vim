@@ -21,8 +21,14 @@
   };
   go = {
     goplsPath = "gopls";
+    checkForUpdates = false;
+    goplsUseDaemon = false;
     goPlsOptions = {
       experimentalPostfixCompletions = true;
+      staticcheck = true;
+      usePlaceholders = true;
+      completeUnimported = true;
+      semanticTokens = true;
       hints = {
         assignVariableTypes = true;
         compositeLiteralFields = true;
@@ -33,8 +39,19 @@
         rangeVariableTypes = true;
       };
     };
+    hints = {
+        assignVariableTypes = true;
+        compositeLiteralFields = true;
+        compositeLiteralTypes = true;
+        constantValues = true;
+        functionTypeParameters = true;
+        parameterNames = true;
+        rangeVariableTypes = true;
+      };
+
   };
   python = {
+    inlayHint.enable = true;
     linting.ruff.enabled = true;
   };
   rust-analyzer = {
