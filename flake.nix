@@ -66,7 +66,10 @@
                     pyright.enable = true;
                     gopls = {
                       enable = true;
-                      extraOptions.settings.gopls.hints = {
+                      extraOptions = {
+                        settings = {
+                          gopls = { 
+                            hints = {
                         assignVariableTypes = true;
                         compositeLiteralFields = true;
                         compositeLiteralTypes = true;
@@ -75,6 +78,9 @@
                         parameterNames = true;
                         rangeVariableTypes = true;
                       };
+                    };
+                  };
+                };
                     };
                     rust-analyzer = {
                       enable = true;
@@ -134,7 +140,8 @@
               globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
-              ];
+                none-ls-nvim
+             ];
               extraConfigLua = ''
                 local lspconfig = require('lspconfig')
                 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -144,6 +151,16 @@
                   -- processed (seen when going through completion list with `<C-N>`)
                   flags = { debounce_text_changes = 150 },
                   capabilities = capabilities,
+                })
+                local nls = require('null-ls')
+
+                -- Configuring none-ls.nvim sources
+                nls.setup({
+                    sources = {
+                        nls.builtins.code_actions.gomodifytags,
+                        nls.builtins.code_actions.impl,
+                        -- Add any other sources you need here
+                    },
                 })
               '';
             };
