@@ -173,7 +173,7 @@ onAttach.function = ''
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
                 (pkgs.vimUtils.buildVimPlugin {
-      pname = "inlay_hints.nvim";
+      pname = "inlay-hints.nvim";
       version = "v0.1-2023-10-18";
       src = pkgs.fetchFromGitHub {
         owner = "MysticalDevil";
@@ -184,10 +184,6 @@ onAttach.function = ''
     })
               ];
               extraConfigLua = ''
-                require("inlay-hints").setup({
-                  commands = { enable = true } -- Enable InlayHints commands, include `InlayHintsToggle`, `InlayHintsEnable` and `InlayHintsDisable`
-                  autocmd = { enable = true } -- Enable the inlay hints on `LspAttach` event
-                })
                 local lspconfig = require('lspconfig')
                 local capabilities = require('cmp_nvim_lsp').default_capabilities()
                 lspconfig.r_language_server.setup({
