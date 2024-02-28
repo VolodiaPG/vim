@@ -66,19 +66,15 @@
                     pyright.enable = true;
                     gopls = {
                       enable = true;
-                      extraOptions.settings.hints = {
-                        assignVariableTypes = true;
-                        compositeLiteralFields = true;
-                        compositeLiteralTypes = true;
-                        constantValues = true;
-                        functionTypeParameters = true;
-                        parameterNames = true;
-                        rangeVariableTypes = true;
-                      };
-                      onAttach.function = ''
-                        local ih = require "inlay-hints"
-                        ih.on_attach(client, bufnr)
-                      '';
+#                      extraOptions.hints = {
+#                        assignVariableTypes = true;
+#                        compositeLiteralFields = true;
+#                        compositeLiteralTypes = true;
+#                        constantValues = true;
+#                        functionTypeParameters = true;
+#                        parameterNames = true;
+#                        rangeVariableTypes = true;
+#                      };
                     };
                     rust-analyzer = {
                       enable = true;
@@ -150,6 +146,19 @@
                   -- processed (seen when going through completion list with `<C-N>`)
                   flags = { debounce_text_changes = 150 },
                   capabilities = capabilities,
+                })
+                require("lspconfig").gopls.setup({
+                  settings = {
+                    hints = {
+                      rangeVariableTypes = true,
+                      parameterNames = true,
+                      constantValues = true,
+                      assignVariableTypes = true,
+                      compositeLiteralFields = true,
+                      compositeLiteralTypes = true,
+                      functionTypeParameters = true,
+                    },
+                  }
                 })
               '';
             };
