@@ -44,10 +44,8 @@
                 transparentBackground = true;
               };
               plugins.nix.enable = true;
-              plugins.nix-develop.enable = true;
+              #plugins.nix-develop.enable = true;
               plugins.trouble.enable = true;
-              plugins.treesitter.enable = true;
-              plugins.cmp-treesitter.enable = true;
               plugins.treesitter-refactor = {
                 enable = true;
                 highlightCurrentScope.enable = false;
@@ -58,13 +56,6 @@
                 navigation.enable = true;
                 smartRename.enable = true;
               };
-              plugins.telescope.enable = true;
-              #plugins.telescope.keymaps = {
-              #  "<leader>ff" = "find_files";
-              #  "<leader>fg" = "live_grep";
-              #  "<leader>fb" = "buffers";
-              #  "<leader>fh" = "help_tags";
-              #};
               plugins = {
                 lsp = {
                   enable = true;
@@ -83,10 +74,10 @@
                         parameterNames = true;
                         rangeVariableTypes = true;
                       };
-onAttach.function = ''
-  local ih = require "inlay-hints"
-  ih.on_attach(client, bufnr)
-'';
+                      onAttach.function = ''
+                        local ih = require "inlay-hints"
+                        ih.on_attach(client, bufnr)
+                      '';
                     };
                     rust-analyzer = {
                       enable = true;
@@ -119,42 +110,42 @@ onAttach.function = ''
                     highlight = "Comment";
                   };
                 };
-                nvim-cmp = {
-                  enable = true;
-                  snippet.expand = "luasnip";
-                  sources = [
-                    {name = "nvim_lsp";}
-                    {name = "path";}
-                    {name = "buffer";}
-                  ];
-                  mapping = {
-                    #  "<CR>" = "cmp.mapping.confirm({select = true})";
-                    #"<Tab>" = ''cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"})'';
-                    #"<S-Tab>" = ''cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"})'';
-                  };
-                };
-                luasnip.enable = true;
-                gitsigns.enable = true;
-                lspkind = {
-                  enable = true;
-                  cmp = {
-                    enable = true;
-                    menu = {
-                      nvim_lsp = "[LSP]";
-                      nvim_lua = "[api]";
-                      path = "[path]";
-                      luasnip = "[snip]";
-                      buffer = "[buffer]";
-                      orgmode = "[orgmode]";
-                      neorg = "[neorg]";
-                    };
-                  };
-                };
+                #nvim-cmp = {
+                #  enable = true;
+                #  snippet.expand = "luasnip";
+                #  sources = [
+                #    {name = "nvim_lsp";}
+                #    {name = "path";}
+                #    {name = "buffer";}
+                #  ];
+                #  # mapping = {
+                #  #   #  "<CR>" = "cmp.mapping.confirm({select = true})";
+                #  #   #"<Tab>" = ''cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"})'';
+                #  #   #"<S-Tab>" = ''cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"})'';
+                #  # };
+                #};
+                #luasnip.enable = true;
+                #gitsigns.enable = true;
+                #lspkind = {
+                #  enable = true;
+                #  cmp = {
+                #    enable = true;
+                #    menu = {
+                #      nvim_lsp = "[LSP]";
+                #      nvim_lua = "[api]";
+                #      path = "[path]";
+                #      luasnip = "[snip]";
+                #      buffer = "[buffer]";
+                #      orgmode = "[orgmode]";
+                #      neorg = "[neorg]";
+                #    };
+                #  };
+                #};
                 #                lspsaga = {
                 #                  enable = true;
                 #                  lightbulb.sign = false;
                 #                };
-                lsp-lines.enable = true;
+                #lsp-lines.enable = true;
                 harpoon.keymaps.addFile = lib.mkForce "<C-a>";
                 harpoon.keymaps.navFile = lib.mkForce {
                   "1" = "&";
@@ -169,19 +160,19 @@ onAttach.function = ''
                 };
                 #lsp-format.enable = true;
               };
-              globals.mapleader = " ";
+              #globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
                 (pkgs.vimUtils.buildVimPlugin {
-      pname = "inlay-hints.nvim";
-      version = "v0.1-2023-10-18";
-      src = pkgs.fetchFromGitHub {
-        owner = "MysticalDevil";
-        repo = "inlay-hints.nvim";
-        rev = "c89185a55f0f9d3152554ae171fcd9b95a447362";
-        sha256 = "sha256-lNtO5TjTpYz/19VSy1vExxcd+dj8Yl1MFWaKsej/omM=";
-      };
-    })
+                  pname = "inlay-hints.nvim";
+                  version = "v0.1-2023-10-18";
+                  src = pkgs.fetchFromGitHub {
+                    owner = "MysticalDevil";
+                    repo = "inlay-hints.nvim";
+                    rev = "c89185a55f0f9d3152554ae171fcd9b95a447362";
+                    sha256 = "sha256-lNtO5TjTpYz/19VSy1vExxcd+dj8Yl1MFWaKsej/omM=";
+                  };
+                })
               ];
               extraConfigLua = ''
                 local lspconfig = require('lspconfig')
@@ -200,8 +191,6 @@ onAttach.function = ''
           whitelist' = [
             "sets.nix"
             "keymaps.nix"
-            #"bufferlines/bufferline.nix"
-            "completion/cmp.nix"
             "completion/copilot.nix"
             "completion/lspkind.nix"
             #"dap/dap.nix"
@@ -244,6 +233,8 @@ onAttach.function = ''
             #"utils/vim-be-good.nix"
             #"utils/todo-comments.nix"
             "utils/wilder.nix"
+            "utils/whichkey.nix"
+"telescope/telescope.nix"
           ];
           whitelist = lib.lists.forEach whitelist' (x: import "${neveSource}/config/${x}");
           neveConfig = {imports = whitelist;};
