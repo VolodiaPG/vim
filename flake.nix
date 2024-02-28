@@ -146,19 +146,7 @@
                   flags = { debounce_text_changes = 150 },
                   capabilities = capabilities,
                 })
-                require("lspconfig").gopls.setup({
-                  settings = {
-                    hints = {
-                      rangeVariableTypes = true,
-                      parameterNames = true,
-                      constantValues = true,
-                      assignVariableTypes = true,
-                      compositeLiteralFields = true,
-                      compositeLiteralTypes = true,
-                      functionTypeParameters = true,
-                    },
-                  }
-                })
+                require("go").setup()
               '';
             };
           };
