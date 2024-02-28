@@ -74,7 +74,7 @@
                     pyright.enable = true;
                     gopls = {
                       enable = true;
-                      extraOptions.hints = {
+                      extraOptions.settings.hints = {
                         assignVariableTypes = true;
                         compositeLiteralFields = true;
                         compositeLiteralTypes = true;
