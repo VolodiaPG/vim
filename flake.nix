@@ -124,6 +124,9 @@
                   "9" = "ç";
                 };
                 #lsp-format.enable = true;
+                lint.lintersByFt = lib.mkForce {
+                  python = ["ruff"];
+                };
               };
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
