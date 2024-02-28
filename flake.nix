@@ -111,8 +111,8 @@
                 enable = true;
                 enableTelescope = true;
                 keymaps = {
-                  addFile = "<leader>s";
-                  toggleQuickMenu = "<leader>d";
+                  addFile = "<leader>ha";
+                  toggleQuickMenu = "<leader>hd";
                   navFile = {
                     "1" = "&";
                     "2" = "é";
@@ -131,6 +131,7 @@
                   python = ["ruff"];
                 };
               };
+              globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
                 go-nvim
