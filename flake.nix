@@ -172,6 +172,16 @@ onAttach.function = ''
               #globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
+                (pkgs.vimUtils.buildVimPlugin {
+      pname = "inlay_hints.nvim";
+      version = "v0.1-2023-10-18";
+      src = pkgs.fetchFromGitHub {
+        owner = "MysticalDevil";
+        repo = "inlay-hints.nvim";
+        rev = "c89185a55f0f9d3152554ae171fcd9b95a447362";
+        sha256 = "sha256-lNtO5TjTpYz/19VSy1vExxcd+dj8Yl1MFWaKsej/omM=";
+      };
+    })
               ];
               extraConfigLua = ''
                 local lspconfig = require('lspconfig')
