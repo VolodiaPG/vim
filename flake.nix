@@ -66,15 +66,15 @@
                     pyright.enable = true;
                     gopls = {
                       enable = true;
-#                      extraOptions.hints = {
-#                        assignVariableTypes = true;
-#                        compositeLiteralFields = true;
-#                        compositeLiteralTypes = true;
-#                        constantValues = true;
-#                        functionTypeParameters = true;
-#                        parameterNames = true;
-#                        rangeVariableTypes = true;
-#                      };
+                      extraOptions.settings.gopls.hints = {
+                        assignVariableTypes = true;
+                        compositeLiteralFields = true;
+                        compositeLiteralTypes = true;
+                        constantValues = true;
+                        functionTypeParameters = true;
+                        parameterNames = true;
+                        rangeVariableTypes = true;
+                      };
                     };
                     rust-analyzer = {
                       enable = true;
@@ -134,7 +134,6 @@
               globals.mapleader = " ";
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
-                go-nvim
               ];
               extraConfigLua = ''
                 local lspconfig = require('lspconfig')
@@ -146,7 +145,6 @@
                   flags = { debounce_text_changes = 150 },
                   capabilities = capabilities,
                 })
-                require("go").setup()
               '';
             };
           };
