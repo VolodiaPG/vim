@@ -95,8 +95,6 @@
                   #  "gD" = "references";
                   #  "gt" = "type_definition";
                   #  "gi" = "implementation";
-                  #  "K" = "hover";
-                  #};
                 };
                 rust-tools = {
                   enable = true;
@@ -136,8 +134,8 @@
                 lint.lintersByFt = lib.mkForce {
                   python = ["ruff"];
                 };
-              };
-              globals.mapleader = " ";
+};
+                          globals.mapleader = " ";
               keymaps = [
                 {
                   mode = "n";
@@ -217,12 +215,12 @@
             "none-ls/none-ls.nix"
             "statusline/lualine.nix"
             "statusline/staline.nix"
-            "ui/alpha.nix"
-            "ui/dressing-nvim.nix"
-            "ui/indent-blankline.nix"
-            "ui/noice.nix"
+            #"ui/alpha.nix"
+            #"ui/dressing-nvim.nix"
+            #"ui/indent-blankline.nix"
+            #"ui/noice.nix"
             "ui/nvim-notify.nix"
-            "ui/nui.nix"
+            #"ui/nui.nix"
             "utils/better-escape.nix"
             "utils/flash.nix"
             #"utils/hardtime.nix"
