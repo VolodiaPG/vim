@@ -68,19 +68,19 @@
                       enable = true;
                       extraOptions = {
                         settings = {
-                          gopls = { 
+                          gopls = {
                             hints = {
-                        assignVariableTypes = true;
-                        compositeLiteralFields = true;
-                        compositeLiteralTypes = true;
-                        constantValues = true;
-                        functionTypeParameters = true;
-                        parameterNames = true;
-                        rangeVariableTypes = true;
+                              assignVariableTypes = true;
+                              compositeLiteralFields = true;
+                              compositeLiteralTypes = true;
+                              constantValues = true;
+                              functionTypeParameters = true;
+                              parameterNames = true;
+                              rangeVariableTypes = true;
+                            };
+                          };
+                        };
                       };
-                    };
-                  };
-                };
                     };
                     rust-analyzer = {
                       enable = true;
@@ -114,34 +114,63 @@
                   };
                 };
                 harpoon = {
-                enable = true;
-                enableTelescope = true;
-                keymaps = {
-                  addFile = "<leader>ha";
-                  toggleQuickMenu = "<leader>hd";
-                  navFile = {
-                    "1" = "&";
-                    "2" = "é";
-                    "3" = "\"";
-                    "4" = "'";
-                    "5" = "(";
-                    "6" = "§";
-                    "7" = "è";
-                    "8" = "!";
-                    "9" = "ç";
+                  enable = true;
+                  enableTelescope = true;
+                  keymaps = {
+                    addFile = "<leader>ha";
+                    toggleQuickMenu = "<leader>hd";
+                    navFile = {
+                      "1" = "&";
+                      "2" = "é";
+                      "3" = "\"";
+                      "4" = "'";
+                      "5" = "(";
+                      "6" = "§";
+                      "7" = "è";
+                      "8" = "!";
+                      "9" = "ç";
+                    };
                   };
-               };
-};
+                };
                 #lsp-format.enable = true;
                 lint.lintersByFt = lib.mkForce {
                   python = ["ruff"];
                 };
               };
               globals.mapleader = " ";
+              keymaps = [
+                {
+                  mode = "n";
+                  key = "<leader>w\"";
+                  action = "<C-W>s";
+                  options = {
+                    silent = true;
+                    desc = "Split window below";
+                  };
+                }
+                {
+                  mode = "n";
+                  key = "<leader>w%";
+                  action = "<C-W>v";
+                  options = {
+                    silent = true;
+                    desc = "Split window right";
+                  };
+                }
+                {
+                  mode = "n";
+                  key = "<leader>ww";
+                  action = "<cmd>wincmd w<CR>";
+                  options = {
+                    silent = true;
+                    desc = "Other window";
+                  };
+                }
+              ];
               extraPlugins = with pkgs.vimPlugins; [
                 vim-just
                 none-ls-nvim
-             ];
+              ];
               extraConfigLua = ''
                 local lspconfig = require('lspconfig')
                 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -181,6 +210,11 @@
             "languages/treesitter/treesitter-textobjects.nix"
             "lsp/conform.nix"
             "lsp/fidget.nix"
+            "lsp/lsp.nix"
+            "lsp/lspsaga.nix"
+            "lsp/lspsaga.nix"
+            "lsp/lspsaga.nix"
+            "none-ls/none-ls.nix"
             "statusline/lualine.nix"
             "statusline/staline.nix"
             "ui/alpha.nix"
