@@ -2,15 +2,15 @@
   diagnostic = {
     virtualText = true;
     virtualTextCurrentLineOnly = false;
-    hintSign  =  "✹";
+    hintSign = "·";
     errorSign = "✘";
-    warningSign = "";
-    infoSign = "";
+    warningSign = "W";
+    infoSign = "I";
   };
   codeLens = {
     enable = false;
   };
-  colors.enable = true;
+  colors.enable = false;
   inlayHint = {
     enable = true;
   };
@@ -26,7 +26,7 @@
   };
   languageserver = {
     nix = {
-      command = "nil";
+      command = "nixd";
       filetypes = ["nix"];
     };
   };
