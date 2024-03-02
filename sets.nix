@@ -9,6 +9,8 @@
       # Enable relative line numbers
       number = true;
       relativenumber = true;
+      lazyredraw = true;
+      ttimeoutlen = 1;
 
       # Set tabs to 2 spaces
       tabstop = 4;
@@ -96,7 +98,7 @@
 
       # Enable chars list
       list = true; # Show invisible characters (tabs, eol, ...)
-      listchars = "eol:↲,space: ,trail:•,extends:→,precedes:←,nbsp:␣";
+      listchars = "eol:↲,space: ,tab:   ,trail:•,extends:→,precedes:←,nbsp:␣";
 
       # More space in the neovim command line for displaying messages
       cmdheight = 2;
