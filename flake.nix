@@ -17,6 +17,7 @@
               ./telescope/telescope.nix
               ./utils/project.nix
               ./utils/whichkey.nix
+              ./utils/harpoon.nix
               ./ui/notify.nix
               ./colorschemes/catppuccin.nix
               ./coc/coc.nix
@@ -27,28 +28,7 @@
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
-            plugins = {
-              harpoon = {
-                enable = true;
-                enableTelescope = true;
-                keymaps = {
-                  addFile = "<leader>hs";
-                  toggleQuickMenu = "<leader>hd";
-                  navFile = {
-                    "1" = "&";
-                    "2" = "é";
-                    "3" = "\"";
-                    "4" = "'";
-                    "5" = "(";
-                    "6" = "§";
-                    "7" = "è";
-                    "8" = "!";
-                    "9" = "ç";
-                  };
-                };
-              };
-              gitsigns.enable = true;
-            };
+            plugins.gitsigns.enable = true;
             extraPlugins = with pkgs.vimPlugins; [
               vim-just
               coc-highlight

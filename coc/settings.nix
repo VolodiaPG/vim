@@ -19,7 +19,7 @@
     hints = true;
   };
   python = {
-     linting.ruff.enabled= true;
+    linting.ruff.enabled = true;
   };
   rust-analyzer = {
     checkOnSave = true;
