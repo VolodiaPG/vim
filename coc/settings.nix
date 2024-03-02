@@ -10,9 +10,16 @@
   codeLens = {
     enable = false;
   };
-  colors.enable = false;
+  colors.enable = true;
   inlayHint = {
     enable = true;
+  };
+  go = {
+    goplsPath = "gopls";
+    hints = true;
+  };
+  python = {
+     linting.ruff.enabled= true;
   };
   rust-analyzer = {
     checkOnSave = true;
