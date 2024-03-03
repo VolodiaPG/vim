@@ -19,16 +19,22 @@
               ./utils/whichkey.nix
               ./utils/harpoon.nix
               ./ui/notify.nix
+              ./ui/indent-blankline.nix
+              ./ui/noice.nix
+              ./statusline/lualine.nix
+              ./statusline/statline.nix
               ./colorschemes/catppuccin.nix
               ./coc/coc.nix
+              ./git/lazygit.nix
+              ./git/gitsigns.nix
             ];
             extraPackages = with pkgs; [
               ripgrep
               nixd
+              lazygit
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
-            plugins.gitsigns.enable = true;
             extraPlugins = with pkgs.vimPlugins; [
               vim-just
               coc-highlight

@@ -2,10 +2,12 @@
   plugins.notify = {
     enable = true;
     backgroundColour = "#000000";
-    fps = 60;
-    render = "default";
-    timeout = 500;
+    fps = 144;
+    timeout = 400;
     topDown = true;
+extraOptions = {
+render = "compact";
+};
   };
   keymaps = [
     {
