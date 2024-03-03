@@ -2,9 +2,10 @@
   description = "My nVIM config";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.nixvim.url = "github:nix-community/nixvim";
-  inputs.neveSource.url = "github:redyf/neve";
-  inputs.neveSource.flake = false;
+  inputs.nixvim = {
+    url = "github:nix-community/nixvim";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   outputs = inputs:
     with inputs;
