@@ -1,3 +1,4 @@
+# Would be coc-settings.json
 {}: {
   diagnostic = {
     virtualText = true;
@@ -13,6 +14,7 @@
   colors.enable = true;
   inlayHint = {
     enable = true;
+    display = true;
   };
   go = {
     goplsPath = "gopls";
