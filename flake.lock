@@ -1,22 +1,5 @@
 {
   "nodes": {
-    "coc": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1709096225,
-        "narHash": "sha256-N4qWD4IlCu8IeBOLn9ne5HhBI5R5ygZy1iYFL/E6Qqw=",
-        "owner": "neoclide",
-        "repo": "coc.nvim",
-        "rev": "0ce9a96b95e5d88181b0bed26f40922d1bf65b90",
-        "type": "github"
-      },
-      "original": {
-        "owner": "neoclide",
-        "ref": "release",
-        "repo": "coc.nvim",
-        "type": "github"
-      }
-    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -210,11 +193,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1709470011,
-        "narHash": "sha256-J21wSrFg5U2B1sRzsG+Uthn7aIE91/dBW5MJrQ4J+eg=",
+        "lastModified": 1709480319,
+        "narHash": "sha256-DVEg0tfhEKQHpwzI19oyhjQ2HJFpqa6SPomzjJVlbVM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c49282e5a7c4df5035940acef59e39ce82257787",
+        "rev": "52fd6a495ef34922c005455052916f9f7dd33bd6",
         "type": "github"
       },
       "original": {
@@ -250,6 +233,22 @@
         "type": "github"
       }
     },
+    "nvim-master": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709466399,
+        "narHash": "sha256-8Y2+a/DQl8KD+fEFGhbyGA9mW/4OTCtxRuUaaMTuC00=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "da2130934b95c4bc8a10266ef032d68a2014d1ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -280,10 +279,10 @@
     },
     "root": {
       "inputs": {
-        "coc": "coc",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "nvim-master": "nvim-master"
       }
     },
     "systems": {
