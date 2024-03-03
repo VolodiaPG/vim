@@ -59,11 +59,20 @@
               inherit pkgs;
             };
           };
+          tmuxWrapper = pkgs.writeShellScript "tmuxWrapper" ''
+            ${pkgs.tmux}/bin/tmux -f ${./tmux.conf} "$@"
+          '';
         in {
           formatter = nixpkgs.legacyPackages.${system}.alejandra;
           packages = {
             inherit nvim;
             default = nvim;
+          };
+          apps = {
+            tmux = {
+              type = "app";
+              program = "${tmuxWrapper}";
+            };
           };
         }
       );

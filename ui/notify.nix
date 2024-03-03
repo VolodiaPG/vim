@@ -5,9 +5,9 @@
     fps = 144;
     timeout = 400;
     topDown = true;
-extraOptions = {
-render = "compact";
-};
+    extraOptions = {
+      render = "compact";
+    };
   };
   keymaps = [
     {
