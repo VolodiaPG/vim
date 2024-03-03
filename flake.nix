@@ -1,17 +1,49 @@
 {
   description = "My nVIM config";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/master";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixvim = {
     url = "github:nix-community/nixvim";
     inputs.nixpkgs.follows = "nixpkgs";
+  };
+  inputs.coc = {
+    url = "github:neoclide/coc.nvim/release";
+    flake = false;
   };
 
   outputs = inputs:
     with inputs;
       flake-utils.lib.eachDefaultSystem (
         system: let
-          pkgs = nixpkgs.legacyPackages.${system};
+          overlay = final: prev: {
+            coc-nvim = prev.buildNpmPackage rec {
+              name = "coc.nvim-master";
+              version = "1.0";
+              src = inputs.coc;
+              npmDepsHash = "sha256-auoNekzZIRSy3fRVLs6mHeR0qhUAHWSXu6wbE9QOWrQ=";
+              buildInputs = [pkgs.nodePackages_latest.nodejs];
+               postInstall = ''
+                cp -r $src/plugin $out/lib/node_modules/${name}
+              '';
+            };
+            toto = pkgs.stdenv.mkDerivation{
+              name = "toto";
+              src = coc;
+              installPhase = ''
+              ls -a $src/
+                cp -r $src/.release $out
+              '';
+           };
+            vimPlugins = prev.vimPlugins // {
+              coc-nvim = prev.vimPlugins.coc-nvim.overrideAttrs (old:{
+                src= coc;
+              });
+            };
+          };
+          pkgs = import nixpkgs {
+            inherit system;
+            #overlays = [overlay];
+          };
           configMod = {pkgs, ...}: {
             imports = [
               ./sets.nix
@@ -70,12 +102,13 @@
           checks = {
             default = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
               inherit nvim;
-              name = "Neve";
+              name = "Navet"; # Inspiration taken from Neve
             };
           };
           packages = {
             inherit nvim;
             default = nvim;
+            toto = pkgs.coc-nvim;
           };
           apps = {
             tmux = {

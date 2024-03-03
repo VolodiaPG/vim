@@ -18,6 +18,10 @@
   inlayHint = {
     enable = true;
     display = true;
+    enableParameter = true;
+    typeSeparator = "◂ ";
+    parameterSeparator = "▸ ";
+    subSeparator = " ";
   };
   go = {
     goplsPath = "gopls";

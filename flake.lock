@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "coc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709096225,
+        "narHash": "sha256-N4qWD4IlCu8IeBOLn9ne5HhBI5R5ygZy1iYFL/E6Qqw=",
+        "owner": "neoclide",
+        "repo": "coc.nvim",
+        "rev": "0ce9a96b95e5d88181b0bed26f40922d1bf65b90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neoclide",
+        "ref": "release",
+        "repo": "coc.nvim",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -193,16 +210,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1709386671,
-        "narHash": "sha256-VPqfBnIJ+cfa78pd4Y5Cr6sOWVW8GYHRVucxJGmRf8Q=",
+        "lastModified": 1709470011,
+        "narHash": "sha256-J21wSrFg5U2B1sRzsG+Uthn7aIE91/dBW5MJrQ4J+eg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fa9a51752f1b5de583ad5213eb621be071806663",
+        "rev": "c49282e5a7c4df5035940acef59e39ce82257787",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixpkgs-unstable",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -263,6 +280,7 @@
     },
     "root": {
       "inputs": {
+        "coc": "coc",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim"
