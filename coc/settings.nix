@@ -1,5 +1,8 @@
 # Would be coc-settings.json
 {}: {
+  coc.preferences = {
+    formatOnSave = true;
+  };
   diagnostic = {
     virtualText = true;
     virtualTextCurrentLineOnly = false;
@@ -18,7 +21,18 @@
   };
   go = {
     goplsPath = "gopls";
-    hints = true;
+    goPlsOptions = {
+      experimentalPostfixCompletions= true;
+      hints = {
+       assignVariableTypes = true;
+       compositeLiteralFields = true;
+       compositeLiteralTypes= true;
+       constantValues= true;
+       functionTypeParameters= true;
+       parameterNames= true;
+       rangeVariableTypes= true;
+      };
+    };
   };
   python = {
     linting.ruff.enabled = true;
@@ -39,4 +53,5 @@
       filetypes = ["nix"];
     };
   };
+  cSpell = import ./spell.nix;
 }
