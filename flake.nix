@@ -1,12 +1,13 @@
 {
   description = "My nVIM config";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Get version 0.10 of neovim
     nvim-master = {
       url = "github:neovim/neovim";
       flake = false;
@@ -31,14 +32,15 @@
             imports = [
               ./sets.nix
               ./keymaps.nix
-              ./ui/alpha.nix
               ./telescope/telescope.nix
               ./utils/project.nix
               ./utils/whichkey.nix
               ./utils/harpoon.nix
               ./ui/notify.nix
+              ./ui/alpha.nix
               ./ui/indent-blankline.nix
               ./ui/noice.nix
+              ./ui/nui.nix
               ./statusline/lualine.nix
               ./statusline/statline.nix
               ./colorschemes/catppuccin.nix

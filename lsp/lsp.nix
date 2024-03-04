@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  rootDir = ''
+    require("lspconfig.util").root_pattern(".envrc", "subflake.nix", "flake.nix", ".git")
+  '';
+in {
   extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "inlay-hints.nvim";
@@ -35,13 +39,17 @@
             };
           };
         };
-        nixd = {enable = true;};
+        nixd = {
+          enable = true;
+          inherit rootDir;
+        };
         pyright = {
           enable = true;
           extraOptions.settings.python.inlayHints = true;
           onAttach.function = ''
             require("inlay-hints").on_attach(client, bufnr)
           '';
+          inherit rootDir;
         };
         ruff-lsp = {enable = true;};
         gopls = {
@@ -49,6 +57,7 @@
           onAttach.function = ''
             require("inlay-hints").on_attach(client, bufnr)
           '';
+          inherit rootDir;
           extraOptions = {
             settings = {
               gopls = {
@@ -69,6 +78,7 @@
           enable = true;
           installCargo = false;
           installRustc = false;
+          inherit rootDir;
           extraOptions.settings.rust-analyzer = {
             inlayHints = {
               bindingModeHints = {
@@ -201,13 +211,20 @@
     }
 
     local lspconfig = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- See https://github.com/neovim/neovim/issues/23291
+    if capabilities.workspace == nil then
+      capabilities.workspace = {}
+      capabilities.workspace.didChangeWatchedFiles = {}
+    end
+    capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
     lspconfig.r_language_server.setup({
-      on_attach = on_attach_custom,
-      -- Debounce "textDocument/didChange" notifications because they are slowly
-      -- processed (seen when going through completion list with `<C-N>`)
       flags = { debounce_text_changes = 150 },
-      capabilities = capabilities,
+      capabilities = __lspCapabilities(),
+      log_level = 2,
+      cmd = { "R", "--slave", "-e", "languageserver::run()" },
+      root_dir = ${rootDir}
     })
   '';
 }

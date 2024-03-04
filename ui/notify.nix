@@ -2,8 +2,8 @@
   plugins.notify = {
     enable = true;
     backgroundColour = "#000000";
-    fps = 144;
-    timeout = 400;
+    fps = 60;
+    timeout = 600;
     topDown = true;
     extraOptions = {
       render = "compact";

@@ -9,7 +9,7 @@
       # Enable relative line numbers
       number = true;
       relativenumber = true;
-      lazyredraw = true;
+      #lazyredraw = true;
       ttimeoutlen = 1;
 
       # Set tabs to 2 spaces
@@ -66,7 +66,7 @@
       cursorline = true; # Highlight the line where the cursor is located
 
       # Set fold settings
-      # These options were reccommended by nvim-ufo
+      # These options were recommended by nvim-ufo
       # See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
       foldcolumn = "0";
       foldlevel = 99;
