@@ -112,7 +112,7 @@
               command = "clippy";
             };
             procMacro = {
-              enable = true;
+              enable = false;
             };
           };
         };

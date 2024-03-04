@@ -221,6 +221,15 @@
     }
     {
       mode = "n";
+      key = "<leader>wù";
+      action = "<C-W>v";
+      options = {
+        silent = true;
+        desc = "Split window right";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>w%";
       action = "<C-W>v";
       options = {
@@ -365,7 +374,7 @@
       action = "mzJ`z";
       options = {
         silent = true;
-        desc = "Allow cursor to stay in the same place after appeding to current line";
+        desc = "Allow cursor to stay in the same place after appending to current line";
       };
     }
 
