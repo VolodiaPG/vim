@@ -211,17 +211,11 @@ in {
     }
 
     local lspconfig = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    -- See https://github.com/neovim/neovim/issues/23291
-    if capabilities.workspace == nil then
-      capabilities.workspace = {}
-      capabilities.workspace.didChangeWatchedFiles = {}
-    end
-    capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend("force", capabilities, require('cmp_nvim_lsp').default_capabilities(capabilities))
     lspconfig.r_language_server.setup({
       flags = { debounce_text_changes = 150 },
-      capabilities = __lspCapabilities(),
+      capabilities = capabilities,
       log_level = 2,
       cmd = { "R", "--slave", "-e", "languageserver::run()" },
       root_dir = ${rootDir}
