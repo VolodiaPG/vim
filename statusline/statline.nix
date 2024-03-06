@@ -15,8 +15,8 @@
       require("staline").setup({
       sections = {
         left = { "-mode", " ", "branch" },
-        mid = { "lsp_name" },
-        right = { "file_name", "line_column" },
+        mid = { "lsp" },
+        right = { "lsp_name", "file_name", "line_column" },
       },
       inactive_sections = {
         left = { "-mode", " ", "branch" },
@@ -24,8 +24,8 @@
         right = { "file_name", "line_column" },
       },
       defaults = {
-        left_separator = " ",
-        right_separator = "  ",
+        left_separator = "",
+        right_separator = "",
         branch_symbol = " ",
         mod_symbol = "",
         line_column = "[%l/%L]",
@@ -38,7 +38,7 @@
         oil = { "Oil", "󰏇 " },
         lazygit = { "LazyGit", " " },
       },
-      mode_icons = {
+     mode_icons = {
         ["n"] = "NORMAL",
         ["no"] = "NORMAL",
         ["nov"] = "NORMAL",

@@ -41,7 +41,7 @@
               ./ui/indent-blankline.nix
               ./ui/noice.nix
               ./ui/nui.nix
-              ./statusline/lualine.nix
+              #./statusline/lualine.nix
               ./statusline/statline.nix
               ./colorschemes/catppuccin.nix
               ./git/lazygit.nix
@@ -74,13 +74,14 @@
             ];
           };
           nixvim' = nixvim.legacyPackages."${system}";
-          nvim = colorFlavour: nixvim'.makeNixvimWithModule {
-            inherit pkgs;
-            module = configMod;
-            extraSpecialArgs = {
-              inherit pkgs colorFlavour;
+          nvim = colorFlavour:
+            nixvim'.makeNixvimWithModule {
+              inherit pkgs;
+              module = configMod;
+              extraSpecialArgs = {
+                inherit pkgs colorFlavour;
+              };
             };
-          };
           tmuxWrapper = pkgs.writeShellScript "tmuxWrapper" ''
             ${pkgs.tmux}/bin/tmux -f ${./tmux.conf} "$@"
           '';
@@ -93,8 +94,8 @@
             };
           };
           packages = {
-            default = (nvim "moccha");
-            light = (nvim "latte");
+            default = nvim "moccha";
+            light = nvim "latte";
           };
           apps = {
             tmux = {
