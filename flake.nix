@@ -74,11 +74,11 @@
             ];
           };
           nixvim' = nixvim.legacyPackages."${system}";
-          nvim = nixvim'.makeNixvimWithModule {
+          nvim = colorFlavour: nixvim'.makeNixvimWithModule {
             inherit pkgs;
             module = configMod;
             extraSpecialArgs = {
-              inherit pkgs;
+              inherit pkgs colorFlavour;
             };
           };
           tmuxWrapper = pkgs.writeShellScript "tmuxWrapper" ''
@@ -93,8 +93,8 @@
             };
           };
           packages = {
-            inherit nvim;
-            default = nvim;
+            default = (nvim "moccha");
+            light = (nvim "latte");
           };
           apps = {
             tmux = {
