@@ -94,7 +94,7 @@
             };
           };
           packages = {
-            default = nvim "moccha";
+            default = nvim "mocha";
             light = nvim "latte";
           };
           apps = {
