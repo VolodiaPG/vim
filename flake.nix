@@ -89,7 +89,7 @@
           formatter = nixpkgs.legacyPackages.${system}.alejandra;
           checks = {
             default = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
-              inherit nvim;
+              nvim = self.outputs.packages.${system}.default;
               name = "Navet"; # Inspiration taken from Neve
             };
           };
