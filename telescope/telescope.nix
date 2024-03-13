@@ -5,9 +5,6 @@
       fzf-native = {
         enable = true;
       };
-      project-nvim = {
-        enable = true;
-      };
       ui-select = {
         settings = {
           specific_opts = {

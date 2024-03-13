@@ -61,11 +61,11 @@
             ];
             extraPackages = with pkgs; [
               ripgrep
-              nixd
+              #nixd
               lazygit
               statix
               alejandra
-              codespell
+              #codespell
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
