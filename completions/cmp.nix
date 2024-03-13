@@ -1,106 +1,86 @@
 {
   plugins = {
-    nvim-cmp = {
+    cmp = {
       enable = true;
-      autoEnableSources = true;
-      experimental = {
-        ghost_text = true;
-      };
-      performance = {
-        debounce = 60;
-        fetchingTimeout = 200;
-        maxViewEntries = 30;
-      };
-      snippet = {
-        expand = "luasnip";
-      };
-      formatting = {
-        fields = ["kind" "abbr" "menu"];
-        expandableIndicator = true;
-      };
-      window = {
-        completion = {
-          border = "rounded";
-          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+      settings = {
+        autoEnableSources = true;
+        experimental = {
+          ghost_text = true;
         };
-        documentation = {
-          border = "rounded";
+        performance = {
+          debounce = 60;
+          fetchingTimeout = 200;
+          maxViewEntries = 30;
         };
-      };
-      sources = [
-        {
-          name = "nvim_lsp"; # lsp
-        }
-        {
-          name = "buffer"; # text within current buffer
-          option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          keywordLength = 3;
-        }
-        # {
-        #   name = "copilot"; # copilot suggestions
-        # }
-        {
-          name = "path"; # file system paths
-          keywordLength = 3;
-        }
-        {
-          name = "luasnip"; # snippets
-          keywordLength = 3;
-        }
-      ];
+        snippet = {
+          expand = "luasnip";
+        };
+        formatting = {
+          fields = ["kind" "abbr" "menu"];
+          expandable_indicator = true;
+        };
+        window = {
+          completion = {
+            border = "rounded";
+            winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+          };
+          documentation = {
+            border = "rounded";
+          };
+        };
+        sources = [
+          {
+            name = "nvim_lsp"; # lsp
+          }
+          {
+            name = "buffer"; # text within current buffer
+            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            keywordLength = 3;
+          }
+          # {
+          #   name = "copilot"; # copilot suggestions
+          # }
+          {
+            name = "path"; # file system paths
+            keywordLength = 3;
+          }
+          {
+            name = "luasnip"; # snippets
+            keywordLength = 3;
+          }
+        ];
 
-      mapping = {
-        "<Tab>" = {
-          modes = ["i" "s"];
-          action = ''
-             function(fallback)
-             	if cmp.visible() then
-            		cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-            	luasnip.expand_or_jump()
-            else
-            fallback()
-                 end
-            end
-          '';
-        };
-        "<S-Tab>" = {
-          modes = ["i" "s"];
-          action = ''
-                 function(fallback)
-            	if cmp.visible() then
-            		cmp.select_prev_item()
-            	elseif luasnip.jumpable(-1) then
-            		luasnip.jump(-1)
-            	else
-            		fallback()
-            	end
-            end
-          '';
-        };
-        "<C-j>" = {
-          action = "cmp.mapping.select_next_item()";
-        };
-        "<C-k>" = {
-          action = "cmp.mapping.select_prev_item()";
-        };
-        "<C-e>" = {
-          action = "cmp.mapping.abort()";
-        };
-        "<C-b>" = {
-          action = "cmp.mapping.scroll_docs(-4)";
-        };
-        "<C-f>" = {
-          action = "cmp.mapping.scroll_docs(4)";
-        };
-        "<C-Space>" = {
-          action = "cmp.mapping.complete()";
-        };
-        "<C-y>" = {
-          action = "cmp.mapping.confirm({ select = true })";
-        };
-        "<S-CR>" = {
-          action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+        mapping = {
+          "<Tab>" = ''
+               function(fallback)
+               	if cmp.visible() then
+              		cmp.select_next_item()
+              elseif luasnip.expand_or_jumpable() then
+              	luasnip.expand_or_jump()
+              else
+              fallback()
+                   end
+              end
+            '';
+          "<S-Tab>" = ''
+                   function(fallback)
+              	if cmp.visible() then
+              		cmp.select_prev_item()
+              	elseif luasnip.jumpable(-1) then
+              		luasnip.jump(-1)
+              	else
+              		fallback()
+              	end
+              end
+            '';
+          "<C-j>"= "cmp.mapping.select_next_item()";
+          "<C-k>" = "cmp.mapping.select_prev_item()";
+          "<C-e>" = "cmp.mapping.abort()";
+          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Space>"= "cmp.mapping.complete()";
+          "<C-y>"= "cmp.mapping.confirm({ select = true })";
+          "<S-CR>"= "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
         };
       };
     };
