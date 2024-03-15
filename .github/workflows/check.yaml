@@ -1,8 +1,10 @@
 name: check-working-order
 on:
+  pull_request:
+    types: [opened, reopened, synchronize]
   push:
     branches:
-      - master
+      - main
 
 jobs:
   lockfile:
