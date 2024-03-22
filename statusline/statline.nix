@@ -26,17 +26,17 @@
       defaults = {
         left_separator = "",
         right_separator = "",
-        branch_symbol = " ",
+        branch_symbol = "",
         mod_symbol = "",
         line_column = "[%l/%L]",
         inactive_color = "#80a6f2", --#303030 is the default
         inactive_bgcolor = "none",
       },
       special_table = {
-        lazy = { "Plugins", "💤 " },
-        TelescopePrompt = { "Telescope", "  " },
-        oil = { "Oil", "󰏇 " },
-        lazygit = { "LazyGit", " " },
+        lazy = { "Plugins", "" },
+        TelescopePrompt = { "Telescope", "" },
+        oil = { "Oil", "" },
+        lazygit = { "LazyGit", "" },
       },
      mode_icons = {
         ["n"] = "NORMAL",

@@ -8,7 +8,7 @@
         toggleQuickMenu = "<leader>hd";
         navFile = {
           "1" = "<leader>ha";
-          "2" = "<leader>z";
+          "2" = "<leader>hz";
           "3" = "<leader>he";
           "4" = "<leader>hr";
           "5" = "<leader>ht";

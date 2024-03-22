@@ -2,7 +2,7 @@
   plugins.notify = {
     enable = true;
     backgroundColour = "#000000";
-    fps = 60;
+    fps = 30;
     timeout = 600;
     topDown = true;
     extraOptions = {
