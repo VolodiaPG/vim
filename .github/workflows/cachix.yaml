@@ -1,6 +1,5 @@
 name: "check and cache"
 on:
-  pull_request:
   push:
 jobs:
   tests:
