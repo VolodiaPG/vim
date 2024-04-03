@@ -249,6 +249,40 @@
         "type": "github"
       }
     },
+    "plugin-inlay-hints": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700360951,
+        "narHash": "sha256-lNtO5TjTpYz/19VSy1vExxcd+dj8Yl1MFWaKsej/omM=",
+        "owner": "MysticalDevil",
+        "repo": "inlay-hints.nvim",
+        "rev": "c89185a55f0f9d3152554ae171fcd9b95a447362",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MysticalDevil",
+        "ref": "c89185a55f0f9d3152554ae171fcd9b95a447362",
+        "repo": "inlay-hints.nvim",
+        "type": "github"
+      }
+    },
+    "plugin-staline": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700645417,
+        "narHash": "sha256-GDMKzxFDtQk5LL+rMsxTGTyLv69w5NUd+u19noeO5ws=",
+        "owner": "tamton-aquib",
+        "repo": "staline.nvim",
+        "rev": "a53f869278b8b186a5afd6f21680cd103c381599",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tamton-aquib",
+        "ref": "a53f869278b8b186a5afd6f21680cd103c381599",
+        "repo": "staline.nvim",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -282,7 +316,9 @@
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "nvim-master": "nvim-master"
+        "nvim-master": "nvim-master",
+        "plugin-inlay-hints": "plugin-inlay-hints",
+        "plugin-staline": "plugin-staline"
       }
     },
     "systems": {
