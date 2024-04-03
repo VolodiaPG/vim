@@ -14,6 +14,12 @@
     };
   };
 
+  # Enable caching
+  nixConfig = {
+    extra-substituters = ["https://vim.cachix.org"];
+    extra-trusted-public-keys = ["vim.cachix.org-1:csyY4pnUgltVSD3alxSV6zZG/lRD7FQBfl4K4RNBgXA="];
+  };
+
   outputs = inputs:
     with inputs;
       flake-utils.lib.eachDefaultSystem (
