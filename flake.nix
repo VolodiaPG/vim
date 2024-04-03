@@ -13,11 +13,11 @@
       flake = false;
     };
     plugin-inlay-hints = {
-      url = "github:MysticalDevil/inlay-hints.nvim?ref=c89185a55f0f9d3152554ae171fcd9b95a447362";
+      url = "github:MysticalDevil/inlay-hints.nvim";
       flake = false;
     };
     plugin-staline = {
-      url = "github:tamton-aquib/staline.nvim?ref=a53f869278b8b186a5afd6f21680cd103c381599";
+      url = "github:tamton-aquib/staline.nvim";
       flake = false;
     };
   };

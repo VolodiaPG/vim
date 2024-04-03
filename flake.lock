@@ -252,16 +252,15 @@
     "plugin-inlay-hints": {
       "flake": false,
       "locked": {
-        "lastModified": 1700360951,
-        "narHash": "sha256-lNtO5TjTpYz/19VSy1vExxcd+dj8Yl1MFWaKsej/omM=",
+        "lastModified": 1709359311,
+        "narHash": "sha256-rcx58qRtcOM6xt22l0+/KIJLXWIrV7Pb0R/dXfENF7k=",
         "owner": "MysticalDevil",
         "repo": "inlay-hints.nvim",
-        "rev": "c89185a55f0f9d3152554ae171fcd9b95a447362",
+        "rev": "4de927889e68e7b5a0ccbb652efc1781117f92aa",
         "type": "github"
       },
       "original": {
         "owner": "MysticalDevil",
-        "ref": "c89185a55f0f9d3152554ae171fcd9b95a447362",
         "repo": "inlay-hints.nvim",
         "type": "github"
       }
@@ -269,16 +268,15 @@
     "plugin-staline": {
       "flake": false,
       "locked": {
-        "lastModified": 1700645417,
-        "narHash": "sha256-GDMKzxFDtQk5LL+rMsxTGTyLv69w5NUd+u19noeO5ws=",
+        "lastModified": 1709914216,
+        "narHash": "sha256-03w3TTzIwZOPSlJNxVQknInW/EIDGiI8WrfEX325dbQ=",
         "owner": "tamton-aquib",
         "repo": "staline.nvim",
-        "rev": "a53f869278b8b186a5afd6f21680cd103c381599",
+        "rev": "c49f2deaba3d3c669e7243b57619e0078e7a351b",
         "type": "github"
       },
       "original": {
         "owner": "tamton-aquib",
-        "ref": "a53f869278b8b186a5afd6f21680cd103c381599",
         "repo": "staline.nvim",
         "type": "github"
       }
