@@ -47,7 +47,7 @@
               ./sets.nix
               ./keymaps.nix
               ./telescope/telescope.nix
-              ./utils/project.nix
+              #./utils/project.nix
               ./utils/whichkey.nix
               ./utils/harpoon.nix
               ./ui/notify.nix
