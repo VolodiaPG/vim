@@ -1,10 +1,8 @@
 {
   plugins.gitsigns = {
     enable = true;
-    settings = {
-      trouble = true;
-      currentLineBlame = false;
-    };
+    trouble = true;
+    currentLineBlame = false;
   };
   keymaps = [
     {
