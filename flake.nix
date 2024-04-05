@@ -55,6 +55,7 @@
               ./ui/indent-blankline.nix
               ./ui/noice.nix
               ./ui/nui.nix
+              ./ui/tmux.nix
               #./statusline/lualine.nix
               ./statusline/statline.nix
               ./colorschemes/catppuccin.nix
@@ -82,6 +83,7 @@
               typos
               shellcheck
               shellharden
+              tmux
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
