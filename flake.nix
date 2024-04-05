@@ -20,6 +20,10 @@
       url = "github:tamton-aquib/staline.nvim";
       flake = false;
     };
+    tmux-catppuccin = {
+      url = "github:catppuccin/tmux";
+      flake = false;
+    };
   };
 
   # Enable caching
@@ -100,8 +104,13 @@
                 inherit pkgs colorFlavour inputs;
               };
             };
+          tmuxConf = pkgs.substituteAll {
+            src = ./tmux.conf;
+            catppuccin = "${inputs.tmux-catppuccin}/catppuccin.tmux";
+          };
           tmuxWrapper = pkgs.writeShellScript "tmuxWrapper" ''
-            ${pkgs.tmux}/bin/tmux -f ${./tmux.conf} "$@"
+            PATH=${pkgs.tmux}/bin:$PATH
+            ${pkgs.tmux}/bin/tmux -f ${tmuxConf} "$@"
           '';
         in {
           formatter = nixpkgs.legacyPackages.${system}.alejandra;

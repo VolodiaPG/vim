@@ -316,7 +316,8 @@
         "nixvim": "nixvim",
         "nvim-master": "nvim-master",
         "plugin-inlay-hints": "plugin-inlay-hints",
-        "plugin-staline": "plugin-staline"
+        "plugin-staline": "plugin-staline",
+        "tmux-catppuccin": "tmux-catppuccin"
       }
     },
     "systems": {
@@ -361,6 +362,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tmux-catppuccin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711833099,
+        "narHash": "sha256-k9Ihfk8C1jYkGUvOcgLwS4UdXR8d/4Nu/Dyh03FpDZc=",
+        "owner": "catppuccin",
+        "repo": "tmux",
+        "rev": "5ed4e8a6a20c928688da268dfcdf460ac9c3cb49",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "tmux",
         "type": "github"
       }
     }
