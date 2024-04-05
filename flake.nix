@@ -121,8 +121,8 @@
             };
           };
           packages = {
-            default = nvim "mocha";
-            light = nvim "latte";
+            default = nvim "latte";
+            dark = nvim "mocha";
           };
           apps = {
             tmux = {
