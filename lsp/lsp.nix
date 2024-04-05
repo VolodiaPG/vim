@@ -129,6 +129,8 @@ in {
             };
           };
         };
+        ltex.enable = true;
+        texlab.enable = true;
       };
       #   silent = true;
       #   lspBuf = {
