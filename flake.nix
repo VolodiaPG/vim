@@ -123,6 +123,7 @@
           packages = {
             default = nvim "latte";
             dark = nvim "mocha";
+            tmux = tmuxWrapper;
           };
           apps = {
             tmux = {

@@ -16,4 +16,4 @@ jobs:
         name: vim
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix flake check
-    - run: nix build -L '.#' '.#light'
+    - run: nix build -L '.#tmux' '.#' '.#dark'
