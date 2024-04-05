@@ -79,7 +79,9 @@
               lazygit
               statix
               alejandra
-              #codespell
+              typos
+              shellcheck
+              shellharden
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;

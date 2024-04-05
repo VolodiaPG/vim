@@ -10,12 +10,18 @@
       typescript = [["prettierd" "prettier"]];
       typescriptreact = [["prettierd" "prettier"]];
       java = ["google-java-format"];
-      python = ["black"];
+      python = [["ruff_fix" "ruff_format"]];
       lua = ["stylua"];
       nix = ["alejandra"];
       markdown = [["prettierd" "prettier"]];
       go = ["gofmt"];
-      "*" = ["codespell"];
+      just = ["just"];
+      shell = [["shellcheck" "shellharden"]];
+      R = ["styler"];
+      latex = ["latexindent"];
+
+      #"*" = ["codespell"];
+      "*" = ["typos"];
       "_" = ["trim_whitespace"];
     };
   };
