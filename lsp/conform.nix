@@ -18,11 +18,12 @@
       just = ["just"];
       shell = [["shellcheck" "shellharden"]];
       R = ["styler"];
+      tex = ["latexindent"];
       latex = ["latexindent"];
 
       #"*" = ["codespell"];
-      "*" = ["typos"];
-      "_" = ["trim_whitespace"];
+      #"*" = ["typos"];
+      "_" = [["trim_whitespace" "typos"]];
     };
   };
 

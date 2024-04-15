@@ -87,6 +87,7 @@
               typos
               shellcheck
               shellharden
+              statix
               tmux
             ];
             plugins.trouble.enable = true;
