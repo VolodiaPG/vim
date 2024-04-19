@@ -129,7 +129,7 @@ in {
             };
           };
         };
-        ltex.enable = true;
+        #ltex.enable = true;
         texlab.enable = true;
       };
       #   silent = true;

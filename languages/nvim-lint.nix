@@ -7,6 +7,7 @@
       python = ["ruff"];
       json = ["jsonlint"];
       yaml = ["yamllint"];
+      tex = ["chktex"];
     };
   };
 }
