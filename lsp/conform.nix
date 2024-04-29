@@ -22,7 +22,7 @@
 
       #"*" = ["codespell"];
       #"*" = ["typos"];
-      "_" = [["trim_whitespace" "typos"]];
+      "*" = [["trim_whitespace" "typos"]];
     };
   };
 
