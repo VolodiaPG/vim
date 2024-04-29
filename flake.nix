@@ -54,6 +54,7 @@
               #./utils/project.nix
               ./utils/whichkey.nix
               ./utils/harpoon.nix
+              ./utils/better-escape.nix
               ./ui/notify.nix
               ./ui/alpha.nix
               ./ui/indent-blankline.nix
