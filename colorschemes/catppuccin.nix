@@ -2,6 +2,7 @@
   colorschemes = {
     catppuccin = {
       enable = true;
+      transparentBackground = true;
       settings = {
         background = {
           light = "macchiato";
