@@ -55,6 +55,7 @@ in {
           inherit rootDir;
         };
         ruff-lsp = {enable = true;};
+        elixirls = {enable = true;};
         gopls = {
           enable = true;
           onAttach.function = ''
