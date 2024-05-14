@@ -89,12 +89,14 @@
               shellcheck
               shellharden
               statix
-              tmux
+              self.outputs.packages.${system}.tmux
+              curl
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
             extraPlugins = with pkgs.vimPlugins; [
               vim-just
+              elixir-tools-nvim
             ];
           };
           nixvim' = nixvim.legacyPackages."${system}";
