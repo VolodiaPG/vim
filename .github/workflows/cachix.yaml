@@ -3,6 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize, closed]
   push:
+    branches: [main]
 jobs:
   tests:
     strategy:
