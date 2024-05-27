@@ -230,6 +230,7 @@ in {
       nextls = {enable = true},
       credo = {enable = true},
       elixirls = {enable = false},
+      capabilities = capabilities
     })
   '';
 }
