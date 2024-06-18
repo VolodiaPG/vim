@@ -1,17 +1,9 @@
 {
   description = "My nVIM config";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.follows = "nixvim/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # Get version 0.10 of neovim
-    nvim-master = {
-      url = "github:neovim/neovim";
-      flake = false;
-    };
+    nixvim.url = "github:nix-community/nixvim";
     plugin-inlay-hints = {
       url = "github:MysticalDevil/inlay-hints.nvim";
       flake = false;
@@ -36,15 +28,8 @@
     with inputs;
       flake-utils.lib.eachDefaultSystem (
         system: let
-          overlay = final: prev: {
-            neovim-unwrapped = prev.neovim-unwrapped.overrideAttrs (old: {
-              version = "0.10";
-              src = nvim-master;
-            });
-          };
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [overlay];
           };
           configMod = {pkgs, ...}: {
             imports = [
@@ -89,14 +74,12 @@
               shellcheck
               shellharden
               statix
-              self.outputs.packages.${system}.tmux
-              curl
+              tmux
             ];
             plugins.trouble.enable = true;
             plugins.treesitter.enable = true;
             extraPlugins = with pkgs.vimPlugins; [
               vim-just
-              elixir-tools-nvim
             ];
           };
           nixvim' = nixvim.legacyPackages."${system}";
