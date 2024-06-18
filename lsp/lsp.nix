@@ -55,6 +55,7 @@ in {
           inherit rootDir;
         };
         ruff-lsp = {enable = true;};
+        elixirls = {enable = true;};
         gopls = {
           enable = true;
           onAttach.function = ''
@@ -224,13 +225,6 @@ in {
       log_level = 2,
       cmd = { "R", "--slave", "-e", "languageserver::run()" },
       root_dir = ${rootDir}
-    })
-
-    require("elixir").setup({
-      nextls = {enable = true},
-      credo = {enable = true},
-      elixirls = {enable = false},
-      capabilities = capabilities
     })
   '';
 }
