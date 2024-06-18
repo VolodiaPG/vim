@@ -43,7 +43,7 @@
     };
     keymaps = {
       "<leader><space>" = {
-        action = "find_files, {}";
+        action = "find_files";
         options.desc = "Find project files";
       };
       "<leader>/" = {
@@ -59,7 +59,7 @@
         options.desc = "+buffer";
       };
       "<leader>ff" = {
-        action = "find_files, {}";
+        action = "find_files";
         options.desc = "Find project files";
       };
       "<leader>fr" = {
