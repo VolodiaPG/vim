@@ -136,10 +136,16 @@ in {
         bashls.enable = true;
         ltex = {
           enable = true;
-          settings.configurationTarget = {
-            dictionary = "workspaceFolderExternalFile";
-            disabledRules = "workspaceFolderExternalFile";
-            hiddenFalsePositives = "workspaceFolderExternalFile";
+          settings = {
+            configurationTarget = {
+              dictionary = "workspaceFolderExternalFile";
+              disabledRules = "workspaceFolderExternalFile";
+              hiddenFalsePositives = "workspaceFolderExternalFile";
+            };
+            additionalRules = {
+              enablePickyRules = true;
+              motherTongue = "fr-FR";
+            };
           };
         };
       };
