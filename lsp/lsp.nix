@@ -133,6 +133,8 @@ in {
         #ltex.enable = true;
         texlab.enable = true;
         r-language-server.enable = true;
+        bashls.enable = true;
+        ltex.enable = true;
       };
       #   silent = true;
       #   lspBuf = {
