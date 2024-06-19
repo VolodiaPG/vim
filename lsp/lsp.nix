@@ -134,7 +134,14 @@ in {
         texlab.enable = true;
         r-language-server.enable = true;
         bashls.enable = true;
-        ltex.enable = true;
+        ltex = {
+          enable = true;
+          settings.configurationTarget = {
+            dictionary = "workspaceFolderExternalFile";
+            disabledRules = "workspaceFolderExternalFile";
+            hiddenFalsePositives = "workspaceFolderExternalFile";
+          };
+        };
       };
       #   silent = true;
       #   lspBuf = {
