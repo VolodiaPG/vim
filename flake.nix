@@ -16,6 +16,10 @@
       url = "github:catppuccin/tmux";
       flake = false;
     };
+    plugin-ltex-extra = {
+      url = "github:barreiroleo/ltex_extra.nvim";
+      flake = false;
+    };
   };
 
   # Enable caching

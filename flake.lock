@@ -257,6 +257,22 @@
         "type": "github"
       }
     },
+    "plugin-ltex-extra": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718420929,
+        "narHash": "sha256-OGeeEIF+z03DdJO2d2kzQ0lZnIYLabp6irYPqYgbCbc=",
+        "owner": "barreiroleo",
+        "repo": "ltex_extra.nvim",
+        "rev": "24acd044ce7a26b3cdb537cbd094de37c3e1ac45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "barreiroleo",
+        "repo": "ltex_extra.nvim",
+        "type": "github"
+      }
+    },
     "plugin-staline": {
       "flake": false,
       "locked": {
@@ -282,6 +298,7 @@
         ],
         "nixvim": "nixvim",
         "plugin-inlay-hints": "plugin-inlay-hints",
+        "plugin-ltex-extra": "plugin-ltex-extra",
         "plugin-staline": "plugin-staline",
         "tmux-catppuccin": "tmux-catppuccin"
       }

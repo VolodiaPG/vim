@@ -13,6 +13,11 @@ in {
       version = "v0.1-2023-10-18";
       src = inputs.plugin-inlay-hints;
     })
+    (pkgs.vimUtils.buildVimPlugin {
+      pname = "ltex-extra.nvim";
+      version = "v0.1-2023-10-18";
+      src = inputs.plugin-ltex-extra;
+    })
   ];
   plugins = {
     lsp-format = {
@@ -136,12 +141,32 @@ in {
         bashls.enable = true;
         ltex = {
           enable = true;
+          onAttach.function = ''
+            require("ltex_extra").setup {
+                -- table <string> : languages for witch dictionaries will be loaded, e.g. { "es-AR", "en-US" }
+                -- https://valentjn.github.io/ltex/supported-languages.html#natural-languages
+                load_langs = { "en-US", "fr-FR" }, -- en-US as default
+                -- boolean : whether to load dictionaries on startup
+                init_check = true,
+                -- string : relative or absolute path to store dictionaries
+                -- e.g. subfolder in the project root or the current working directory: ".ltex"
+                -- e.g. shared files for all projects:  vim.fn.expand("~") .. "/.local/share/ltex"
+                path = ".ltex", -- project root or current working directory
+                -- string : "none", "trace", "debug", "info", "warn", "error", "fatal"
+                log_level = "none",
+                -- table : configurations of the ltex language server.
+                -- Only if you are calling the server from ltex_extra
+                server_opts = nil
+            }
+          '';
+          filetypes = [
+            "bib"
+            "gitcommit"
+            "markdown"
+            "plaintex"
+            "tex"
+          ];
           settings = {
-            configurationTarget = {
-              dictionary = "workspaceFolderExternalFile";
-              disabledRules = "workspaceFolderExternalFile";
-              hiddenFalsePositives = "workspaceFolderExternalFile";
-            };
             additionalRules = {
               enablePickyRules = true;
               motherTongue = "fr-FR";
