@@ -132,6 +132,7 @@ in {
         };
         #ltex.enable = true;
         texlab.enable = true;
+        r-language-server.enable = true;
       };
       #   silent = true;
       #   lspBuf = {
@@ -215,16 +216,5 @@ in {
     require('lspconfig.ui.windows').default_options = {
       border = _border
     }
-
-    local lspconfig = require('lspconfig')
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend("force", capabilities, require('cmp_nvim_lsp').default_capabilities(capabilities))
-    lspconfig.r_language_server.setup({
-      flags = { debounce_text_changes = 150 },
-      capabilities = capabilities,
-      log_level = 2,
-      cmd = { "R", "--slave", "-e", "languageserver::run()" },
-      root_dir = ${rootDir}
-    })
   '';
 }
