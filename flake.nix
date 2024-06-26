@@ -29,8 +29,7 @@
   };
 
   outputs = inputs:
-    with inputs;
-      flake-utils.lib.eachDefaultSystem (
+    with inputs; (flake-utils.lib.eachDefaultSystem (
         system: let
           pkgs = import nixpkgs {
             inherit system;
@@ -99,10 +98,20 @@
             src = ./tmux.conf;
             catppuccin = "${inputs.tmux-catppuccin}/catppuccin.tmux";
           };
-          tmuxWrapper = pkgs.writeShellScript "tmuxWrapper" ''
-            PATH=${pkgs.tmux}/bin:$PATH
-            ${pkgs.tmux}/bin/tmux -f ${tmuxConf} "$@"
-          '';
+          tmux = pkgs.tmux.overrideAttrs (oldAttrs: {
+            buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.makeWrapper];
+
+            postInstall =
+              (oldAttrs.postInstall or "")
+              + ''
+                mkdir $out/libexec
+
+                mv $out/bin/tmux $out/libexec/tmux-unwrapped
+
+                makeWrapper $out/libexec/tmux-unwrapped $out/bin/tmux \
+                  --add-flags "-f ${tmuxConf}"
+              '';
+          });
         in {
           formatter = nixpkgs.legacyPackages.${system}.alejandra;
           checks = {
@@ -114,14 +123,24 @@
           packages = {
             default = nvim "latte";
             dark = nvim "mocha";
-            tmux = tmuxWrapper;
+            nvim = nvim "latte";
+            inherit tmux;
           };
           apps = {
             tmux = {
               type = "app";
-              program = "${tmuxWrapper}";
+              program = "${tmux}/bin/tmux";
+            };
+            nvim = {
+              type = "app";
+              program = "${nvim "latte"}/bin/nvim";
             };
           };
         }
-      );
+      )
+      // {
+        overlay = final: prev: {
+          inherit (self.outputs.packages.${prev.system}) nvim tmux;
+        };
+      });
 }
