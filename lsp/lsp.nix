@@ -169,7 +169,7 @@ in {
           settings = {
             additionalRules = {
               enablePickyRules = true;
-              motherTongue = "fr-FR";
+              #motherTongue = "fr-FR";
             };
           };
         };
