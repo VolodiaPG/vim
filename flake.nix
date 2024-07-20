@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.follows = "nixvim/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    nixvim.url = "github:nix-community/nixvim";
+    nixvim.url = "github:nix-community/nixvim?rev=c0ea106b4bdf8707837bb0d80efd6affbc128bdf";
     plugin-inlay-hints = {
       url = "github:MysticalDevil/inlay-hints.nvim";
       flake = false;
@@ -43,6 +43,7 @@
               ./utils/whichkey.nix
               ./utils/harpoon.nix
               ./utils/better-escape.nix
+              ./utils/inc-rename.nix
               ./ui/notify.nix
               ./ui/alpha.nix
               ./ui/indent-blankline.nix
@@ -55,14 +56,15 @@
               ./git/lazygit.nix
               ./git/gitsigns.nix
               ./languages/nvim-lint.nix
+              ./languages/treesitter/treesitter.nix
               ./languages/treesitter/treesitter-context.nix
               ./languages/treesitter/treesitter-textobjects.nix
-              ./languages/treesitter/treesitter.nix
               ./lsp/conform.nix
               ./lsp/fidget.nix
               ./lsp/lsp.nix
               ./lsp/lspsaga.nix
               ./lsp/trouble.nix
+              ./lsp/efm.nix
               ./completions/cmp.nix
               ./completions/lspkind.nix
               ./snippets/luasnip.nix
@@ -79,8 +81,6 @@
               statix
               tmux
             ];
-            plugins.trouble.enable = true;
-            plugins.treesitter.enable = true;
             extraPlugins = with pkgs.vimPlugins; [
               vim-just
             ];

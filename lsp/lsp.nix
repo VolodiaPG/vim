@@ -60,7 +60,10 @@ in {
           inherit rootDir;
         };
         ruff-lsp = {enable = true;};
-        elixirls = {enable = true;};
+        lexical = {
+          enable = true;
+          cmd = ["${pkgs.lexical}/libexec/start_lexical.sh"];
+        };
         gopls = {
           enable = true;
           onAttach.function = ''
@@ -173,7 +176,19 @@ in {
             };
           };
         };
+        efm = {
+          enable = true;
+          extraOptions.init_options = {
+            documentFormatting = true;
+            documentRangeFormatting = true;
+            hover = true;
+            documentSymbol = true;
+            codeAction = true;
+            completion = true;
+          };
+        };
       };
+
       #   silent = true;
       #   lspBuf = {
       #   gd = {
