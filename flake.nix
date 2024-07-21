@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.follows = "nixvim/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    nixvim.url = "github:nix-community/nixvim?rev=c0ea106b4bdf8707837bb0d80efd6affbc128bdf";
+    nixvim.url = "github:nix-community/nixvim";
     plugin-inlay-hints = {
       url = "github:MysticalDevil/inlay-hints.nvim";
       flake = false;

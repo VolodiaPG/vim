@@ -215,17 +215,16 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1720430487,
-        "narHash": "sha256-Nw08opwY5AxywJqp3siDXVAHbGQ0WTEmoxMqL6q2AK4=",
+        "lastModified": 1721421992,
+        "narHash": "sha256-4Mu+O2/S5XU1D8HLTU53pv20hEH6aiTkUqjLHowYdY8=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "c0ea106b4bdf8707837bb0d80efd6affbc128bdf",
+        "rev": "e80a8874accd45cac90616a7b5faa49c5a68e6b9",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "c0ea106b4bdf8707837bb0d80efd6affbc128bdf",
         "type": "github"
       }
     },
