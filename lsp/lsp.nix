@@ -47,10 +47,10 @@ in {
           };
         };
         # not working because of CVE
-        #nixd = {
-        #  enable = true;
-        #  inherit rootDir;
-        #};
+        nixd = {
+          enable = true;
+          inherit rootDir;
+        };
         pyright = {
           enable = true;
           extraOptions.settings.python.inlayHints = true;

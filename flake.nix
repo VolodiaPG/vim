@@ -71,7 +71,7 @@
             ];
             extraPackages = with pkgs; [
               ripgrep
-              #nixd
+              nixd
               lazygit
               statix
               alejandra
