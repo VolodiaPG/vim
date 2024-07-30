@@ -1,10 +1,12 @@
 {
   plugins.better-escape = {
     enable = true;
-    timeout = 200;
-    settings.mapping = [
-      "jj"
-      "jk"
-    ];
+    settings = {
+      timeout = 200;
+      mapping = [
+        "jj"
+        "jk"
+      ];
+    };
   };
 }
