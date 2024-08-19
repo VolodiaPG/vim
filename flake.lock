@@ -215,11 +215,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1723778908,
-        "narHash": "sha256-pWxo0rqf6qf2IHtomEASq5gEzkSB78dD1wizytvU/EM=",
+        "lastModified": 1724036242,
+        "narHash": "sha256-/+gGF0tsAg2dF7Ds9Yt9Sne7ETmILKz1QVnDr+T2S2g=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "6ab17b1b2e6bc2c10718025105d452dd929cc058",
+        "rev": "312db6b6e2d98dd8d22223fe383c7e0b4bab60c6",
         "type": "github"
       },
       "original": {
@@ -253,11 +253,11 @@
     "plugin-inlay-hints": {
       "flake": false,
       "locked": {
-        "lastModified": 1720224366,
-        "narHash": "sha256-E6+h9YIMRlot0umYchGYRr94bimBosunVyyvhmdwjIo=",
+        "lastModified": 1723959472,
+        "narHash": "sha256-pdBHKrHCIK9nUmBpVrbyVTgZrs09EQeHMalWJMDMihQ=",
         "owner": "MysticalDevil",
         "repo": "inlay-hints.nvim",
-        "rev": "1d5bd49a43f8423bc56f5c95ebe8fe3f3b96ed58",
+        "rev": "e81444416eea7fe5f19a6bc8336a7aed628f3663",
         "type": "github"
       },
       "original": {
