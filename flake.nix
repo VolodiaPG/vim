@@ -123,7 +123,7 @@
           packages = {
             default = nvim "latte";
             dark = nvim "mocha";
-            nvim = nvim "latte";
+            nvim = nvim "mocha";
             inherit tmux;
           };
           apps = {
@@ -133,7 +133,7 @@
             };
             nvim = {
               type = "app";
-              program = "${nvim "latte"}/bin/nvim";
+              program = "${nvim "mocha"}/bin/nvim";
             };
           };
         }
