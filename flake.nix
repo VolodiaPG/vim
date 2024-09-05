@@ -3,7 +3,17 @@
   inputs = {
     nixpkgs.follows = "nixvim/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    nixvim.url = "github:nix-community/nixvim";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs = {
+        devshell.follows = "";
+        flake-compat.follows = "";
+        git-hooks.follows = "";
+        home-manager.follows = "";
+        nix-darwin.follows = "";
+        treefmt-nix.follows = "";
+      };
+    };
     plugin-inlay-hints = {
       url = "github:MysticalDevil/inlay-hints.nvim";
       flake = false;
@@ -50,6 +60,7 @@
               ./ui/noice.nix
               ./ui/nui.nix
               ./ui/tmux.nix
+              ./ui/rainbow-delimiters.nix
               #./statusline/lualine.nix
               ./statusline/statline.nix
               ./colorschemes/catppuccin.nix
