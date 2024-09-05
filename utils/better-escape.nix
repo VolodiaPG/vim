@@ -3,10 +3,14 @@
     enable = true;
     settings = {
       timeout = 200;
-      mapping = [
-        "jj"
-        "jk"
-      ];
+      mappings = {
+        i = {
+          j = {
+            j = "<Esc>";
+            k = "<Esc>";
+          };
+        };
+      };
     };
   };
 }

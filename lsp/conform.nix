@@ -1,28 +1,30 @@
 {
   plugins.conform-nvim = {
     enable = true;
-    notifyOnError = true;
-    formattersByFt = {
-      html = [["prettierd" "prettier"]];
-      css = [["prettierd" "prettier"]];
-      javascript = [["prettierd" "prettier"]];
-      javascriptreact = [["prettierd" "prettier"]];
-      typescript = [["prettierd" "prettier"]];
-      typescriptreact = [["prettierd" "prettier"]];
-      java = ["google-java-format"];
-      python = [["ruff_fix" "ruff_format"]];
-      lua = ["stylua"];
-      nix = ["alejandra"];
-      markdown = [["prettierd" "prettier"]];
-      go = ["gofmt"];
-      just = ["just"];
-      shell = [["shellcheck" "shellharden"]];
-      R = ["styler"];
-      tex = ["latexindent"];
+    settings = {
+      notify_on_error = true;
+      formattersByFt = {
+        html = [["prettierd" "prettier"]];
+        css = [["prettierd" "prettier"]];
+        javascript = [["prettierd" "prettier"]];
+        javascriptreact = [["prettierd" "prettier"]];
+        typescript = [["prettierd" "prettier"]];
+        typescriptreact = [["prettierd" "prettier"]];
+        java = ["google-java-format"];
+        python = [["ruff_fix" "ruff_format"]];
+        lua = ["stylua"];
+        nix = ["alejandra"];
+        markdown = [["prettierd" "prettier"]];
+        go = ["gofmt"];
+        just = ["just"];
+        shell = [["shellcheck" "shellharden"]];
+        R = ["styler"];
+        tex = ["latexindent"];
 
-      #"*" = ["codespell"];
-      #"*" = ["typos"];
-      "*" = [["trim_whitespace" "typos"]];
+        #"*" = ["codespell"];
+        #"*" = ["typos"];
+        "*" = [["trim_whitespace" "typos"]];
+      };
     };
   };
 

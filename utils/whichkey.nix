@@ -2,18 +2,20 @@
   # TODO: Implement general mappings
   plugins.which-key = {
     enable = true;
-    ignoreMissing = false;
-    icons = {
-      breadcrumb = "»";
-      group = "+";
-      separator = ""; # ➜
-    };
-    # registrations = {
-    #   "<leader>t" = " Terminal";
-    # };
-    window = {
-      border = "none";
-      winblend = 0;
+    settings = {
+      ignore_milling = false;
+      icons = {
+        breadcrumb = "»";
+        group = "+";
+        separator = ""; # ➜
+      };
+      # registrations = {
+      #   "<leader>t" = " Terminal";
+      # };
+      win = {
+        border = "none";
+        wo.winblend = 0;
+      };
     };
   };
 }
