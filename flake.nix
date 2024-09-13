@@ -22,10 +22,6 @@
       url = "github:tamton-aquib/staline.nvim";
       flake = false;
     };
-    tmux-catppuccin = {
-      url = "github:catppuccin/tmux";
-      flake = false;
-    };
     plugin-ltex-extra = {
       url = "github:barreiroleo/ltex_extra.nvim";
       flake = false;
@@ -107,7 +103,9 @@
             };
           tmuxConf = pkgs.substituteAll {
             src = ./tmux.conf;
-            catppuccin = "${inputs.tmux-catppuccin}/catppuccin.tmux";
+            catppuccin = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
+            resurrect = "${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/resurrect.tmux";
+            continuum = "${pkgs.tmuxPlugins.continuum}/share/tmux-plugins/continuum/continuum.tmux";
           };
           tmux = pkgs.tmux.overrideAttrs (oldAttrs: {
             buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.makeWrapper];
@@ -135,7 +133,7 @@
             default = nvim "latte";
             dark = nvim "mocha";
             nvim = nvim "mocha";
-            inherit tmux;
+            inherit tmux tmuxConf;
           };
           apps = {
             tmux = {
