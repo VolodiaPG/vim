@@ -57,6 +57,7 @@
               ./ui/nui.nix
               ./ui/tmux.nix
               ./ui/rainbow-delimiters.nix
+              ./ui/icons.nix
               #./statusline/lualine.nix
               ./statusline/statline.nix
               ./colorschemes/catppuccin.nix

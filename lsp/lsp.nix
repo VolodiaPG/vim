@@ -30,7 +30,7 @@ in {
       enable = true;
       capabilities = "offsetEncoding =  'utf-16'";
       servers = {
-        lua-ls = {
+        lua_ls = {
           enable = true;
           extraOptions = {
             settings = {
@@ -59,7 +59,7 @@ in {
           '';
           inherit rootDir;
         };
-        ruff-lsp = {enable = true;};
+        ruff_lsp.enable = true;
         lexical = {
           enable = true;
           cmd = ["${pkgs.lexical}/libexec/start_lexical.sh"];
@@ -86,7 +86,7 @@ in {
             };
           };
         };
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = false;
           installRustc = false;
@@ -140,7 +140,10 @@ in {
         };
         #ltex.enable = true;
         texlab.enable = true;
-        r-language-server.enable = true;
+        r_language_server = {
+          enable = true;
+          package = pkgs.rPackages.languageserver;
+        };
         bashls.enable = true;
         ltex = {
           enable = true;
