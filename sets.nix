@@ -136,7 +136,7 @@
         g.neovide_theme = 'auto'
 
         -- Neovide Fonts
-        o.guifont = "Comic Code Ligatures:Medium:h14"
+        o.guifont = "Comic Code Ligatures:h14"
         -- o.guifont = "CommitMono:Medium:h15"
         -- o.guifont = "JetBrainsMono Nerd Font:h14:Medium:i"
         -- o.guifont = "FiraMono Nerd Font:Medium:h14"
