@@ -122,6 +122,7 @@
         -- Neovide
       if g.neovide then
         -- Neovide options
+        g.neovide_cursor_animation_length = 0.02
         g.neovide_fullscreen = false
         g.neovide_hide_mouse_when_typing = false
         g.neovide_refresh_rate = 144
