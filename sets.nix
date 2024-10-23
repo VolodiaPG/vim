@@ -132,9 +132,10 @@
         g.neovide_cursor_vfx_particle_density = 14.0
         g.neovide_cursor_vfx_particle_speed = 12.0
         g.neovide_transparency = 0.8
+        g.neovide_theme = 'auto'
 
         -- Neovide Fonts
-        o.guifont = "Comic Code Ligatures:Medium:h15"
+        o.guifont = "Comic Code Ligatures:Medium:h14"
         -- o.guifont = "CommitMono:Medium:h15"
         -- o.guifont = "JetBrainsMono Nerd Font:h14:Medium:i"
         -- o.guifont = "FiraMono Nerd Font:Medium:h14"
