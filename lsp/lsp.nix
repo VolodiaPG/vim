@@ -22,7 +22,7 @@ in {
   plugins = {
     lsp-format = {
       enable = false; # Enable it if you want lsp-format integration for none-ls
-      extraOptions = {
+      settings = {
         timeoutMs = 60000;
       };
     };
