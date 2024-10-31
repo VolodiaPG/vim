@@ -76,6 +76,7 @@
               ./completions/cmp.nix
               ./completions/lspkind.nix
               ./snippets/luasnip.nix
+              ./ai/avante.nix
             ];
             extraPackages = with pkgs; [
               ripgrep
