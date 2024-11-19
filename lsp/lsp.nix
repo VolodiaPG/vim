@@ -59,7 +59,7 @@ in {
           '';
           inherit rootDir;
         };
-        ruff_lsp.enable = true;
+        ruff.enable = true;
         lexical = {
           enable = true;
           cmd = ["${pkgs.lexical}/libexec/start_lexical.sh"];
