@@ -112,6 +112,17 @@ backup_tmux_config() {
         mv "$HOME/.tmux.conf" "$backup_file"
         print_success "Existing tmux configuration backed up to $backup_file"
     fi
+    if [ ! -d "$HOME/.config/tmux/plugins/catppuccin" ]; then
+        print_message "Installing catppuccin tmux theme..."
+        mkdir -p ~/.config/tmux/plugins/catppuccin
+        git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+        print_success "catppuccin tmux theme installed successfully!"
+    else
+        print_message "catppuccin tmux theme already installed, updating..."
+        cd ~/.config/tmux/plugins/catppuccin/tmux
+        git pull
+        print_success "catppuccin tmux theme updated successfully!"
+    fi
 }
 
 # Install the configuration
