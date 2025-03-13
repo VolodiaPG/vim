@@ -11,7 +11,7 @@ return {
         light = "macchiato",
         dark = "macchiato",
       },
-      transparent_background = false,
+      transparent_background = true,
       term_colors = true,
       dim_inactive = {
         enabled = false,

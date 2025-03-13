@@ -115,12 +115,14 @@ backup_tmux_config() {
     if [ ! -d "$HOME/.config/tmux/plugins/catppuccin" ]; then
         print_message "Installing catppuccin tmux theme..."
         mkdir -p ~/.config/tmux/plugins/catppuccin
-        git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+        git clone https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
         print_success "catppuccin tmux theme installed successfully!"
     else
         print_message "catppuccin tmux theme already installed, updating..."
+	    BACK=$(pwd)
         cd ~/.config/tmux/plugins/catppuccin/tmux
         git pull
+	    cd $BACK
         print_success "catppuccin tmux theme updated successfully!"
     fi
 }
@@ -146,18 +148,6 @@ install_tmux_config() {
     cp ./tmux.conf "$HOME/.tmux.conf"
 
     print_success "tmux configuration installed successfully!"
-
-    # Check if tmux plugin manager is installed
-    if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-        print_message "Installing tmux plugin manager..."
-        mkdir -p "$HOME/.tmux/plugins"
-        git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
-        print_success "tmux plugin manager installed successfully!"
-        print_message "Remember to press prefix + I in tmux to install plugins."
-    else
-        print_message "tmux plugin manager already installed."
-        print_message "Remember to press prefix + I in tmux to install plugins."
-    fi
 }
 
 # Main function
