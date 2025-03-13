@@ -7,11 +7,13 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-treesitter-context",
   },
-  build = ":TSUpdate",
+  build = require('nixCatsUtils').lazyAdd ':TSUpdate',
+  opts_extend = require('nixCatsUtils').lazyAdd(nil, false),
   config = function()
     require("nvim-treesitter.configs").setup({
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = {
+      ensure_installed = require('nixCatsUtils').lazyAdd({
+        "diff",
         "bash",
         "c",
         "cpp",
@@ -26,13 +28,13 @@ return {
         "markdown_inline",
         "latex",
         "bibtex",
-      },
+      }),
       
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
       
       -- Automatically install missing parsers when entering buffer
-      auto_install = true,
+      auto_install = require('nixCatsUtils').lazyAdd(true, false),
       
       -- List of parsers to ignore installing (for "all")
       ignore_install = {},

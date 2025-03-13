@@ -4,7 +4,7 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    -- { "nvim-telescope/telescope-fzf-native.nvim", build=false},
     "nvim-tree/nvim-web-devicons",
   },
   cmd = "Telescope",
@@ -110,6 +110,6 @@ return {
     })
     
     -- Load extensions
-    telescope.load_extension("fzf")
+    -- telescope.load_extension("fzf")
   end,
 } 

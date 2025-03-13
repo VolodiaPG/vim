@@ -104,6 +104,8 @@
           nodePackages.prettier 
           rustfmt
           go
+          fzf
+          binutils
         ];
       };
 
@@ -128,8 +130,8 @@
           gitsigns-nvim
           indent-blankline-nvim
           lualine-nvim
-          noice-nvim
-          nui-nvim
+          # noice-nvim
+          # nui-nvim
           nvim-cmp
           nvim-lint
           nvim-lspconfig
@@ -140,7 +142,7 @@
           nvim-treesitter-textobjects
           nvim-ts-autotag
           vimtex
-          harpoon
+          harpoon2
           nvim-ts-context-commentstring
           nvim-web-devicons
           persistence-nvim
