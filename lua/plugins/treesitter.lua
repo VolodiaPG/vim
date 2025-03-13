@@ -6,6 +6,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-treesitter-context",
+    "HiPhish/rainbow-delimiters.nvim",
   },
   build = require('nixCatsUtils').lazyAdd ':TSUpdate',
   opts_extend = require('nixCatsUtils').lazyAdd(nil, false),
@@ -128,5 +129,7 @@ return {
       zindex = 20, -- The Z-index of the context window
       on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
     })
+
+    require('rainbow-delimiters.setup').setup {}
   end,
 } 

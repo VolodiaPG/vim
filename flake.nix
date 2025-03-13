@@ -157,6 +157,7 @@
           nvim-treesitter-textobjects
           nvim-treesitter.withAllGrammars
           supermaven-nvim
+          rainbow-delimiters-nvim
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
           #   plugins: with plugins; [
