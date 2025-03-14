@@ -106,6 +106,7 @@
           go
           fzf
           binutils
+          texlivePackages.latexindent
         ];
       };
 
