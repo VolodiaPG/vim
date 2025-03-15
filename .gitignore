@@ -50,3 +50,4 @@ flake.lock
 
 # macOS specific
 .DS_Store
+.aider*

@@ -107,6 +107,7 @@
           fzf
           binutils
           texlivePackages.latexindent
+          aider-chat
         ];
       };
 
@@ -159,6 +160,7 @@
           nvim-treesitter.withAllGrammars
           supermaven-nvim
           rainbow-delimiters-nvim
+          aider-nvim
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
           #   plugins: with plugins; [
