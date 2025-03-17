@@ -108,6 +108,10 @@
           binutils
           texlivePackages.latexindent
           aider-chat
+          alejandra
+          shellcheck
+          shellharden
+          typos
         ];
       };
 
@@ -294,13 +298,35 @@
     # The one used to build neovim is resolved inside the builder
     # and is passed to our categoryDefinitions and packageDefinitions
     pkgs = import nixpkgs { inherit system; };
+
+           tmuxConf = pkgs.substituteAll {
+            src = ./tmux.conf;
+            catppuccin = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
+          };
+          tmux = pkgs.tmux.overrideAttrs (oldAttrs: {
+            buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.makeWrapper];
+
+            postInstall =
+              (oldAttrs.postInstall or "")
+              + ''
+                mkdir $out/libexec
+
+                mv $out/bin/tmux $out/libexec/tmux-unwrapped
+
+                makeWrapper $out/libexec/tmux-unwrapped $out/bin/tmux \
+                  --add-flags "-f ${tmuxConf}"
+              '';
+          });
+
   in
   {
     # these outputs will be wrapped with ${system} by utils.eachSystem
 
     # this will make a package out of each of the packageDefinitions defined above
     # and set the default package to the one passed in here.
-    packages = utils.mkAllWithDefault defaultPackage;
+    packages = utils.mkAllWithDefault defaultPackage // {
+        inherit tmux tmuxConf;
+      };
 
     # choose your package for devShell
     # and add whatever else you want in it.
@@ -313,7 +339,6 @@
         '';
       };
     };
-
   }) // (let
     # we also export a nixos module to allow reconfiguration from configuration.nix
     nixosModule = utils.mkNixosModules {

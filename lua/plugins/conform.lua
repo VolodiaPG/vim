@@ -29,12 +29,12 @@ return {
       scss = { { 'prettierd', 'prettier' } },
       markdown = { { 'prettierd', 'prettier' } },
       yaml = { { 'prettierd', 'prettier' } },
-      sh = { 'shfmt' },
-      bash = { 'shfmt' },
+      shell = { 'shfmt', 'shellcheck', 'shellharden' },
       rust = { 'rustfmt' },
       go = { 'gofmt' },
       tex = { 'latexindent' },
-      -- Add more formatters as needed
+      nix = { 'alejandra' },
+      ['*'] = { 'trim_whitespace', 'typos' },
     },
 
     -- Set up format-on-save
@@ -80,4 +80,3 @@ return {
     })
   end,
 }
-
