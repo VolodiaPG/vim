@@ -128,6 +128,8 @@
           shellcheck
           shellharden
           typos
+          elixir-ls
+          next-ls
         ];
       };
 
@@ -181,6 +183,7 @@
           supermaven-nvim
           rainbow-delimiters-nvim
           aider-nvim
+          elixir-tools-nvim
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
           #   plugins: with plugins; [
