@@ -7,9 +7,13 @@ return {
     local elixirls = require("elixir.elixirls")
 
     elixir.setup {
-      nextls = {enable = true},
+      nextls = {
+        enable = true,
+        cmd = "nextls",
+      },
       elixirls = {
         enable = true,
+        cmd = "elixir-ls",
         settings = elixirls.settings {
           dialyzerEnabled = false,
           enableTestLenses = false,
