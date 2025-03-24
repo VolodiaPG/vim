@@ -112,7 +112,7 @@
           lua-language-server
           nil # I would go for nixd but lazy chooses this one idk
           stylua
-          elixir-ls
+          lexical
           shfmt
           isort
           black
@@ -128,8 +128,8 @@
           shellcheck
           shellharden
           typos
-          elixir-ls
-          next-ls
+          lexical
+          bash-language-server
         ];
       };
 
@@ -183,7 +183,7 @@
           supermaven-nvim
           rainbow-delimiters-nvim
           aider-nvim
-          elixir-tools-nvim
+          fidget-nvim
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
           #   plugins: with plugins; [
@@ -253,6 +253,9 @@
       # this section is for environmentVariables that should be available
       # at RUN TIME for plugins. Will be available to path within neovim terminal
       environmentVariables = {
+        general = {
+          LEXICAL = "${pkgs.lexical}/bin/start_lexical.sh";
+        };
         test = {
           CATTESTVAR = "It worked!";
         };
@@ -324,7 +327,7 @@
       }: {
         settings = {
           wrapRc = false;
-          unwrappedCfgPath = "/absolute/path/to/config";
+          unwrappedCfgPath = "/Users/volodia/Documents/vim/";
         };
         categories = {
           general = true;
