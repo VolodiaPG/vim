@@ -131,6 +131,7 @@
           # beam27Packages.elixir-ls
           next-ls
           bash-language-server
+          tailwindcss-language-server
         ];
       };
 
