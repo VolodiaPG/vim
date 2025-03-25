@@ -128,7 +128,8 @@
           shellcheck
           shellharden
           typos
-          lexical
+          # beam27Packages.elixir-ls
+          next-ls
           bash-language-server
         ];
       };
@@ -184,6 +185,7 @@
           rainbow-delimiters-nvim
           aider-nvim
           fidget-nvim
+          elixir-tools-nvim
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
           #   plugins: with plugins; [
@@ -254,7 +256,9 @@
       # at RUN TIME for plugins. Will be available to path within neovim terminal
       environmentVariables = {
         general = {
-          LEXICAL = "${pkgs.lexical}/bin/start_lexical.sh";
+          LEXICAL = "${pkgs.lexical}/libexec/start_lexical.sh";
+          #   ELIXIRLS = "${pkgs.elixir-ls}/lib/language_server.sh";
+          # ELS_DISABLE_VERSION_MANAGERS = 1;
         };
         test = {
           CATTESTVAR = "It worked!";
@@ -327,7 +331,7 @@
       }: {
         settings = {
           wrapRc = false;
-          unwrappedCfgPath = "/Users/volodia/Documents/vim/";
+          unwrappedCfgPath = "/Users/volodia/Documents/vim";
         };
         categories = {
           general = true;

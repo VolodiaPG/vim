@@ -29,11 +29,25 @@ return {
         },
         filetypes = { 'lua' },
       },
-      lexical = {
-        cmd = { 'lexical' },
-        settings = {},
-        filetypes = { 'elixir', 'eelixir', 'heex' },
-      },
+      -- lexical = {
+      --   cmd = { os.getenv 'LEXICAL' },
+      --   cmd = { 'lexical' },
+      -- },
+      -- nextls = {
+      --   cmd = { 'nextls' },
+      -- },
+      -- elixirls = {
+      --   flags = {
+      --     debounce_text_changes = 150,
+      --   },
+      --   cmd = { 'elixir-ls' },
+      --   settings = {
+      --     elixirLS = {
+      --       dialyzerEnabled = false,
+      --     },
+      --   },
+      --   filetypes = { 'elixir', 'eelixir', 'heex' },
+      -- },
       bashls = {},
       -- Add other servers as needed
       -- rust_analyzer = {},
