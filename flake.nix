@@ -134,6 +134,7 @@
           tailwindcss-language-server
           rPackages.languageserver
           air-formatter
+          basedpyright
         ];
       };
 

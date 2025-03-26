@@ -56,6 +56,7 @@ return {
       --   filetypes = { 'elixir', 'eelixir', 'heex' },
       -- },
       bashls = {},
+      basedpyright = {},
       -- Add other servers as needed
       -- rust_analyzer = {},
       -- tsserver = {},
