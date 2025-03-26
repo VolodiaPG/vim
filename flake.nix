@@ -133,6 +133,7 @@
           bash-language-server
           tailwindcss-language-server
           rPackages.languageserver
+          air-formatter
         ];
       };
 
