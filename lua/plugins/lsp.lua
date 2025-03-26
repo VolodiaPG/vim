@@ -29,6 +29,7 @@ return {
         },
         filetypes = { 'lua' },
       },
+      r_language_server = {},
       -- lexical = {
       --   cmd = { os.getenv 'LEXICAL' },
       --   cmd = { 'lexical' },

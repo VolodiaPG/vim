@@ -132,6 +132,7 @@
           next-ls
           bash-language-server
           tailwindcss-language-server
+          rPackages.languageserver
         ];
       };
 
