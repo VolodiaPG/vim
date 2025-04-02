@@ -32,9 +32,9 @@ return {
       shell = { 'shfmt', 'shellcheck', 'shellharden' },
       rust = { 'rustfmt' },
       go = { 'gofmt' },
-      tex = { 'latexindent' },
+      tex = { 'latexindent', 'typos' },
       nix = { 'alejandra' },
-      ['*'] = { 'trim_whitespace', 'typos' },
+      ['*'] = { 'trim_whitespace' },
     },
 
     -- Set up format-on-save
