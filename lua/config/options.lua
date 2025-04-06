@@ -5,11 +5,11 @@ local g = vim.g
 local o = vim.o
 
 -- Leader key
-g.mapleader = " "
-g.maplocalleader = " "
+g.mapleader = ' '
+g.maplocalleader = ' '
 
 -- Clipboard settings
-opt.clipboard = "unnamedplus"
+opt.clipboard = 'unnamedplus'
 
 -- Line numbers
 opt.number = true
@@ -32,14 +32,14 @@ opt.hlsearch = true
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.grepprg = "rg --vimgrep"
-opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = 'rg --vimgrep'
+opt.grepformat = '%f:%l:%c:%m'
 
 -- Text wrapping
 opt.wrap = true
 opt.textwidth = 80
 opt.wrapmargin = 0
-opt.formatoptions = "t"
+opt.formatoptions = 't'
 opt.linebreak = true
 
 -- Split behavior
@@ -47,13 +47,13 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Enable mouse
-opt.mouse = "a"
+opt.mouse = 'a'
 
 -- Decrease updatetime
 opt.updatetime = 50
 
 -- Better completion experience
-opt.completeopt = {"menuone", "noselect", "noinsert"}
+opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
 
 -- Undo and backup settings
 opt.swapfile = false
@@ -64,11 +64,11 @@ opt.undofile = true
 opt.termguicolors = true
 
 -- UI elements
-opt.signcolumn = "yes"
+opt.signcolumn = 'yes'
 opt.cursorline = true
 
 -- Fold settings
-opt.foldcolumn = "0"
+opt.foldcolumn = '0'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -80,22 +80,22 @@ opt.scrolloff = 8
 opt.timeoutlen = 10
 
 -- Encoding
-opt.encoding = "utf-8"
-opt.fileencoding = "utf-8"
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
 
 -- Cursor options
 opt.guicursor = {
-  "n-v-c:block",
-  "i-ci-ve:ver100",
-  "r-cr:hor20",
-  "o:hor50",
-  "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
-  "sm:block-blinkwait175-blinkoff150-blinkon175"
+  'n-v-c:block',
+  'i-ci-ve:ver100',
+  'r-cr:hor20',
+  'o:hor50',
+  'a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor',
+  'sm:block-blinkwait175-blinkoff150-blinkon175',
 }
 
 -- Show invisible characters
 opt.list = true
-opt.listchars = "eol:↲,space: ,tab:   ,trail:•,extends:→,precedes:←,nbsp:␣"
+opt.listchars = 'eol:↲,space: ,tab:   ,trail:•,extends:→,precedes:←,nbsp:␣'
 
 -- Command line height
 opt.cmdheight = 2
@@ -119,7 +119,7 @@ if g.neovide then
   g.neovide_fullscreen = false
   g.neovide_hide_mouse_when_typing = false
   g.neovide_refresh_rate = 144
-  g.neovide_cursor_vfx_mode = "ripple"
+  g.neovide_cursor_vfx_mode = 'ripple'
   g.neovide_cursor_animate_command_line = true
   g.neovide_cursor_animate_in_insert_mode = true
   g.neovide_cursor_vfx_particle_lifetime = 5.0
@@ -129,11 +129,12 @@ if g.neovide then
   g.neovide_theme = 'auto'
 
   -- Neovide Fonts
-  o.guifont = "Comic Code Ligatures:h13"
+  o.guifont = 'Comic Code Ligatures:h13'
   -- o.guifont = "CommitMono:Medium:h15"
   -- o.guifont = "JetBrainsMono Nerd Font:h14:Medium:i"
   -- o.guifont = "FiraMono Nerd Font:Medium:h14"
   -- o.guifont = "CaskaydiaCove Nerd Font:h14:b:i"
   -- o.guifont = "BlexMono Nerd Font Mono:h14:Medium:i"
   -- o.guifont = "Liga SFMono Nerd Font:b:h15"
-end 
+end
+
