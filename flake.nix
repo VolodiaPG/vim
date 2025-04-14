@@ -135,6 +135,7 @@
           rPackages.languageserver
           air-formatter
           basedpyright
+          ltex-ls
         ];
       };
 
@@ -190,6 +191,7 @@
           aider-nvim
           fidget-nvim
           elixir-tools-nvim
+          ltex_extra-nvim
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
           #   plugins: with plugins; [

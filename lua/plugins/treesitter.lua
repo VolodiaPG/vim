@@ -27,8 +27,6 @@ return {
         'vim',
         'markdown',
         'markdown_inline',
-        'latex',
-        'bibtex',
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -38,10 +36,11 @@ return {
       auto_install = require('nixCatsUtils').lazyAdd(true, false),
 
       -- List of parsers to ignore installing (for "all")
-      ignore_install = {},
+      ignore_install = { 'latex' },
 
       highlight = {
         enable = true,
+        disable = { 'latex' },
         additional_vim_regex_highlighting = false,
       },
 
