@@ -117,7 +117,6 @@
           isort
           black
           prettierd
-          nodePackages.prettier
           rustfmt
           go
           fzf
