@@ -65,7 +65,7 @@ return {
             },
           },
           disabledRules = {
-            ['en-US'] = { 'WHITESPACE_RULE' },
+            ['en-US'] = { 'WHITESPACE_RULE', 'MORFOLOGIK_RULE_EN_US' },
           },
         },
       },
