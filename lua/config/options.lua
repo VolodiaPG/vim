@@ -40,7 +40,7 @@ opt.wrap = true
 opt.textwidth = 80
 opt.wrapmargin = 0
 opt.formatoptions = 't'
-opt.linebreak = true
+-- opt.linebreak = true
 
 -- Split behavior
 opt.splitbelow = true
@@ -137,4 +137,3 @@ if g.neovide then
   -- o.guifont = "BlexMono Nerd Font Mono:h14:Medium:i"
   -- o.guifont = "Liga SFMono Nerd Font:b:h15"
 end
-
