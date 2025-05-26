@@ -128,7 +128,7 @@
           shellharden
           typos
           # beam27Packages.elixir-ls
-          next-ls
+          elixir-ls
           bash-language-server
           tailwindcss-language-server
           rPackages.languageserver
@@ -261,7 +261,7 @@
       # at RUN TIME for plugins. Will be available to path within neovim terminal
       environmentVariables = {
         general = {
-          LEXICAL = "${pkgs.lexical}/libexec/start_lexical.sh";
+          # LEXICAL = "${pkgs.lexical}/libexec/start_lexical.sh";
           #   ELIXIRLS = "${pkgs.elixir-ls}/lib/language_server.sh";
           # ELS_DISABLE_VERSION_MANAGERS = 1;
         };

@@ -43,18 +43,18 @@ return {
       -- nextls = {
       --   cmd = { 'nextls' },
       -- },
-      -- elixirls = {
-      --   flags = {
-      --     debounce_text_changes = 150,
-      --   },
-      --   cmd = { 'elixir-ls' },
-      --   settings = {
-      --     elixirLS = {
-      --       dialyzerEnabled = false,
-      --     },
-      --   },
-      --   filetypes = { 'elixir', 'eelixir', 'heex' },
-      -- },
+      elixirls = {
+        flags = {
+          debounce_text_changes = 150,
+        },
+        cmd = { 'elixir-ls' },
+        -- settings = {
+        --   elixirLS = {
+        --     dialyzerEnabled = false,
+        --   },
+        -- },
+        filetypes = { 'elixir', 'eelixir', 'heex' },
+      },
       bashls = {},
       basedpyright = {},
       -- Add other servers as needed

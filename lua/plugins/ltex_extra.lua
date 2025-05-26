@@ -27,6 +27,22 @@ return {
     server_opts = {
       settings = {
         ltex = {
+          enabled = {
+            'bib',
+            'gitcommit',
+            'mail',
+            'markdown',
+            'mdx',
+            'org',
+            'norg',
+            'plaintex',
+            'rst',
+            'rnoweb',
+            'latex',
+            'tex',
+            'text',
+            'pandoc',
+          },
           language = 'en-US',
           diagnosticSeverity = 'hint',
           sentenceCacheSize = 2000,
