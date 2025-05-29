@@ -5,6 +5,15 @@ require('nixCatsUtils').setup {
   non_nix_value = true,
 }
 
+-- filter which-key warnings
+local orig_notify = vim.notify
+vim.notify = function(msg, level, opts)
+  if msg:match 'which%-key' and level == vim.log.levels.WARN then
+    return
+  end
+  orig_notify(msg, level, opts)
+end
+
 -- NOTE: You might want to move the lazy-lock.json file
 local function getlockfilepath()
   if require('nixCatsUtils').isNixCats and type(nixCats.settings.unwrappedCfgPath) == 'string' then
@@ -16,7 +25,7 @@ end
 local lazyOptions = {
   lockfile = getlockfilepath(),
   install = {
-    colorscheme = { "catppuccin" },
+    colorscheme = { 'catppuccin' },
   },
   checker = {
     enabled = true,
@@ -26,25 +35,25 @@ local lazyOptions = {
     notify = false,
   },
   ui = {
-    border = "rounded",
+    border = 'rounded',
   },
   performance = {
     rtp = {
       disabled_plugins = {
-        "gzip",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
+        'gzip',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
       },
     },
   },
 }
 
 -- Load core settings
-require('config.options')
-require('config.keymaps')
-require('config.autocmds')
+require 'config.options'
+require 'config.keymaps'
+require 'config.autocmds'
 
 -- NOTE: this the lazy wrapper. Use it like require('lazy').setup() but with an extra
 -- argument, the path to lazy.nvim as downloaded by nix, or nil, before the normal arguments.
@@ -57,8 +66,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   -- precompiled binaries do not agree with nixos, and we can just make nix install this stuff for us.
   { 'williamboman/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
   { 'williamboman/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
-    -- import/override with your plugins
- { import = 'plugins' },
+  -- import/override with your plugins
+  { import = 'plugins' },
 }, lazyOptions)
 
 vim.g.snacks_animate = false
