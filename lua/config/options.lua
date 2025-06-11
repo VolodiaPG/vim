@@ -36,11 +36,11 @@ opt.grepprg = 'rg --vimgrep'
 opt.grepformat = '%f:%l:%c:%m'
 
 -- Text wrapping
-opt.wrap = true
-opt.textwidth = 80
+opt.wrap = false
+-- opt.textwidth = 80
 opt.wrapmargin = 0
 opt.formatoptions = 't'
--- opt.linebreak = true
+opt.linebreak = false
 
 -- Split behavior
 opt.splitbelow = true

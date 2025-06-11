@@ -73,3 +73,60 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
 vim.g.snacks_animate = false
 vim.g.lazyvim_picker = 'snacks'
 vim.opt.cmdheight = 0
+
+vim.api.nvim_create_user_command(
+  'FormatParagraph80', -- The name of your custom command
+  function()
+    -- Save the current position
+    local save_cursor = vim.fn.getpos '.'
+
+    -- Get the current paragraph boundaries more precisely
+    -- First go to the start of the paragraph
+    vim.cmd 'normal! {'
+
+    -- If we're on a blank line, move down to the actual paragraph start
+    if vim.fn.getline('.'):match '^%s*$' then
+      vim.cmd 'normal! j'
+    end
+
+    local start_line = vim.fn.line '.'
+
+    -- Go to the end of the paragraph
+    vim.cmd 'normal! }'
+
+    -- If we're on a blank line, move up to the actual paragraph end
+    if vim.fn.getline('.'):match '^%s*$' then
+      vim.cmd 'normal! k'
+    end
+
+    local end_line = vim.fn.line '.'
+
+    -- Get the paragraph content
+    local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+    local text = table.concat(lines, '\n')
+
+    -- Use fmt to wrap the text
+    local wrapped_text = vim.fn.system('fmt -w 80', text)
+
+    -- Remove any trailing newline
+    wrapped_text = wrapped_text:gsub('\n$', '')
+
+    -- Split the wrapped text into lines
+    local wrapped_lines = {}
+    for line in string.gmatch(wrapped_text, '[^\n]+') do
+      table.insert(wrapped_lines, line)
+    end
+
+    -- Replace the paragraph with the wrapped text
+    vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, wrapped_lines)
+
+    -- Restore the cursor position
+    vim.fn.setpos('.', save_cursor)
+  end,
+  {
+    desc = 'Formats the current paragraph to 80 characters', -- Description for :h :FormatParagraph80
+    -- range = true,
+  }
+)
+
+vim.keymap.set('n', '<leader>f80', ':FormatParagraph80<CR>', { desc = 'Format current paragraph to 80 chars' })
