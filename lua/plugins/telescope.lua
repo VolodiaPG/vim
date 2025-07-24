@@ -19,11 +19,12 @@ return {
     { "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
     { "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace symbols" },
     { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+    { "<leader>ft", "<cmd>Telescope search_history<cr>", desc = "Search history" },
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
-    
+
     telescope.setup({
       defaults = {
         prompt_prefix = " ",
@@ -108,8 +109,8 @@ return {
         },
       },
     })
-    
+
     -- Load extensions
     -- telescope.load_extension("fzf")
   end,
-} 
+}
