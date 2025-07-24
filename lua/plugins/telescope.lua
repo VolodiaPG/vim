@@ -8,19 +8,20 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   cmd = "Telescope",
-  keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
-    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
-    { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
-    { "<leader>fc", "<cmd>Telescope commands<cr>", desc = "Commands" },
-    { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-    { "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
-    { "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace symbols" },
-    { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
-    { "<leader>ft", "<cmd>Telescope search_history<cr>", desc = "Search history" },
-  },
+  -- keys = {
+  --   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+  --   { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+  --   { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
+  --   { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
+  --   { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
+  --   { "<leader>fc", "<cmd>Telescope commands<cr>", desc = "Commands" },
+  --   { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+  --   { "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
+  --   { "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace symbols" },
+  --   { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+  --   { "<leader>ft", "<cmd>Telescope search_history<cr>", desc = "Search history" },
+  --   { "<leader>ft", "<cmd>Telescope search_history<cr>", desc = "Search history" },
+  -- },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
