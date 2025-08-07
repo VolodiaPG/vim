@@ -34,6 +34,8 @@ return {
       go = { 'gofmt' },
       tex = { 'latexindent', 'typos' },
       nix = { 'alejandra' },
+      r = { 'air' },
+      elixir = { 'mix', 'credo' },
       ['*'] = { 'trim_whitespace' },
     },
 
