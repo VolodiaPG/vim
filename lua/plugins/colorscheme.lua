@@ -61,12 +61,28 @@ return {
     -- Set colorscheme
     vim.cmd.colorscheme 'catppuccin'
 
+    local C = require('catppuccin.palettes').get_palette()
     local mode_colors = {
-      n = '#38b1f0',
-      i = '#9ece6a',
-      c = '#e27d60',
-      v = '#c678dd',
-      V = '#c678dd',
+      ['n'] = { 'NORMAL', '#38b1f0' },
+      ['no'] = { 'N-PENDING', '#38b1f0' },
+      ['i'] = { 'INSERT', '#9ece6a' },
+      ['ic'] = { 'INSERT', '#9ece6a' },
+      ['t'] = { 'TERMINAL', C.green },
+      ['v'] = { 'VISUAL', '#c678dd' },
+      ['V'] = { 'V-LINE', '#c678dd' },
+      ['\22'] = { 'V-BLOCK', C.flamingo }, -- The '' character is 0x16 or "\22"
+      ['R'] = { 'REPLACE', C.maroon },
+      ['Rv'] = { 'V-REPLACE', C.maroon },
+      ['s'] = { 'SELECT', C.maroon },
+      ['S'] = { 'S-LINE', C.maroon },
+      ['\19'] = { 'S-BLOCK', C.maroon }, -- The '' character is 0x13 or "\19"
+      ['c'] = { 'COMMAND', C.peach },
+      ['cv'] = { 'COMMAND', C.peach },
+      ['ce'] = { 'COMMAND', C.peach },
+      ['r'] = { 'PROMPT', C.teal },
+      ['rm'] = { 'MORE', C.teal },
+      ['r?'] = { 'CONFIRM', C.mauve },
+      ['!'] = { 'SHELL', C.green },
     }
 
     local function dim_color(hex_color, dim_factor)
@@ -86,17 +102,20 @@ return {
       -- Convert RGB back to hex, padding with a leading zero if needed
       return string.format('#%02x%02x%02x', r, g, b)
     end
-
+    -- Function to set line number color based on mode
     local function set_line_nr_color()
       local mode = vim.api.nvim_get_mode().mode
-      -- local color_name = mode_colors[mode] or 'text' -- Default to 'text' if mode is not in the table
-      -- local colors = require('catppuccin.palettes').get_palette()
-      local mode_color = mode_colors[mode]
+      local mode_info = mode_colors[mode]
 
+      -- Use a default color if the mode is not found
+      local mode_color = mode_info and mode_info[2] or C.text
+
+      -- Use a dimmer color for the non-cursor line numbers
+      local dim_color = dim_color(mode_color, 0.65)
+
+      -- Set the highlight for the dim line numbers
       vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = mode_color, bold = true })
-      vim.api.nvim_set_hl(0, 'LineNr', { fg = dim_color(mode_color, 0.65) })
-      -- vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = mode_color })
-      -- vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = mode_color })
+      vim.api.nvim_set_hl(0, 'LineNr', { fg = dim_color })
     end
 
     vim.api.nvim_create_augroup('ModeChangeLineNr', { clear = true })
