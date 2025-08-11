@@ -13,7 +13,7 @@ opt.clipboard = 'unnamedplus'
 
 -- Line numbers
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.ttimeoutlen = 1
 
 -- Tab settings
