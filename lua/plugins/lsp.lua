@@ -43,11 +43,12 @@ return {
       -- nextls = {
       --   cmd = { 'nextls' },
       -- },
+      -- ;
       elixirls = {
         flags = {
           debounce_text_changes = 150,
         },
-        cmd = { 'elixir-ls' },
+        cmd = { 'expert' },
         -- settings = {
         --   elixirLS = {
         --     dialyzerEnabled = false,

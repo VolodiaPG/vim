@@ -6,6 +6,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    expert.url = "github:elixir-lang/expert";
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
@@ -135,6 +136,7 @@
           air-formatter
           basedpyright
           ltex-ls
+          inputs.expert.packages.${pkgs.system}.expert
         ];
       };
 
