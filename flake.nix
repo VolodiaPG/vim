@@ -110,7 +110,7 @@
           fd
           stdenv.cc.cc
           lua-language-server
-          nil # I would go for nixd but lazy chooses this one idk
+          nixd
           nixfmt-tree
           stylua
           lexical

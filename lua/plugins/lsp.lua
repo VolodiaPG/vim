@@ -61,6 +61,7 @@ return {
       -- rust_analyzer = {},
       -- tsserver = {},
       -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+      nixd = {},
     }
 
     -- Setup inlay hints
