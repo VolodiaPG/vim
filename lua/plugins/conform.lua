@@ -33,7 +33,7 @@ return {
       rust = { 'rustfmt' },
       go = { 'gofmt' },
       tex = { 'latexindent', 'typos' },
-      nix = { 'alejandra' },
+      nix = { 'treefmt' },
       r = { 'air' },
       elixir = { 'mix', 'credo' },
       ['*'] = { 'trim_whitespace' },

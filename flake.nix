@@ -111,6 +111,7 @@
           stdenv.cc.cc
           lua-language-server
           nil # I would go for nixd but lazy chooses this one idk
+          nixfmt-tree
           stylua
           lexical
           shfmt
@@ -122,8 +123,6 @@
           fzf
           binutils
           texlivePackages.latexindent
-          aider-chat
-          alejandra
           shellcheck
           shellharden
           typos
@@ -187,7 +186,6 @@
           nvim-treesitter.withAllGrammars
           supermaven-nvim
           rainbow-delimiters-nvim
-          aider-nvim
           fidget-nvim
           elixir-tools-nvim
           ltex_extra-nvim
