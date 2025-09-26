@@ -373,8 +373,7 @@
         # and is passed to our categoryDefinitions and packageDefinitions
         pkgs = import nixpkgs { inherit system; };
 
-        tmuxConf = pkgs.substituteAll {
-          src = ./tmux.conf;
+        tmuxConf = pkgs.replaceVars ./tmux.conf {
           catppuccin = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
         };
         tmux = pkgs.tmux.overrideAttrs (oldAttrs: {
