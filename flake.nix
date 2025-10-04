@@ -375,6 +375,8 @@
 
         tmuxConf = pkgs.replaceVars ./tmux.conf {
           catppuccin = "${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux";
+          continuum = "${pkgs.tmuxPlugins.continuum}/share/tmux-plugins/continuum/continuum.tmux";
+          resurrect = "${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/resurrect.tmux";
         };
         tmux = pkgs.tmux.overrideAttrs (oldAttrs: {
           buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ pkgs.makeWrapper ];
