@@ -64,7 +64,7 @@ local opts = {
     },
   },
   strategies = {
-    chat = { adapter = 'openrouter', model = 'anthropic/claude-3.5-sonnet' },
+    chat = { adapter = 'openrouter', model = 'anthropic/claude-4.5-sonnet' },
     inline = {
       adapter = 'openrouter',
       model = 'google/gemini-2.5-flash',
