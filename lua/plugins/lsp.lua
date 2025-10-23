@@ -62,6 +62,7 @@ return {
       -- tsserver = {},
       -- html = { filetypes = { 'html', 'twig', 'hbs'} },
       nixd = {},
+      texlab = {},
     }
 
     -- Setup inlay hints
