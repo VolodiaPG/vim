@@ -141,7 +141,7 @@ return {
           cfg.on_attach(client, bufnr)
         end
       end
-      require('lspconfig')[server_name].setup {
+      vim.lsp.config[server_name] = {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = (cfg or {}).settings,
