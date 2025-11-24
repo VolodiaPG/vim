@@ -135,7 +135,8 @@
               rPackages.languageserver
               air-formatter
               basedpyright
-              ltex-ls
+              # ltex-ls
+              texlab
             ];
           };
 
@@ -160,8 +161,6 @@
               gitsigns-nvim
               indent-blankline-nvim
               lualine-nvim
-              # noice-nvim
-              # nui-nvim
               nvim-cmp
               nvim-lint
               nvim-lspconfig
@@ -172,6 +171,7 @@
               nvim-treesitter-textobjects
               nvim-ts-autotag
               vimtex
+              cmp-vimtex
               harpoon2
               nvim-ts-context-commentstring
               nvim-web-devicons
@@ -190,15 +190,8 @@
               rainbow-delimiters-nvim
               fidget-nvim
               elixir-tools-nvim
-              ltex_extra-nvim
+              # ltex_extra-nvim
               codecompanion-nvim
-              # This is for if you only want some of the grammars
-              # (nvim-treesitter.withPlugins (
-              #   plugins: with plugins; [
-              #     nix
-              #     lua
-              #   ]
-              # ))
 
               # sometimes you have to fix some names
               {

@@ -87,8 +87,8 @@ return {
           ellipsis_char = '...',
           menu = {
             supermaven = '[Supermaven]',
-            buffer = '[Buffer]',
             nvim_lsp = '[LSP]',
+            buffer = '[Buffer]',
             luasnip = '[Snippet]',
             path = '[Path]',
           },
@@ -122,4 +122,3 @@ return {
     })
   end,
 }
-
