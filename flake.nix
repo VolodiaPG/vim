@@ -128,14 +128,13 @@
               shellcheck
               shellharden
               typos
-              # beam27Packages.elixir-ls
               elixir-ls
               bash-language-server
               tailwindcss-language-server
               rPackages.languageserver
               air-formatter
               basedpyright
-              # ltex-ls
+              ltex-ls
               texlab
             ];
           };
@@ -190,7 +189,7 @@
               rainbow-delimiters-nvim
               fidget-nvim
               elixir-tools-nvim
-              # ltex_extra-nvim
+              ltex_extra-nvim
               codecompanion-nvim
 
               # sometimes you have to fix some names
