@@ -191,6 +191,7 @@
               elixir-tools-nvim
               ltex_extra-nvim
               codecompanion-nvim
+              noice-nvim
 
               # sometimes you have to fix some names
               {
