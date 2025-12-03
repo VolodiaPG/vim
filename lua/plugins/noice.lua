@@ -13,6 +13,7 @@ return {
     },
     opts = {
       stages = 'static',
+      timeout = 3000,
     },
   },
   {
