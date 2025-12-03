@@ -46,6 +46,8 @@ return {
           language = 'en-US',
           diagnosticSeverity = 'hint',
           sentenceCacheSize = 2000,
+          completionEnabled = false,
+          checkFrequency = 'save',
           additionalRules = {
             enablePickyRules = true,
           },
