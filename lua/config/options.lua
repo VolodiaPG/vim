@@ -77,7 +77,8 @@ opt.foldenable = true
 opt.scrolloff = 8
 
 -- Timeout for key sequences
-opt.timeoutlen = 10
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
 
 -- Encoding
 opt.encoding = 'utf-8'

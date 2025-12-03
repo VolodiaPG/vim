@@ -64,4 +64,4 @@ map("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, { des
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic quickfix list" }) 
+map("n", "<leader>l", vim.diagnostic.setloclist, { desc = "Open diagnostic quickfix list" }) 
