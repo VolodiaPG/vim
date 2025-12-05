@@ -48,6 +48,13 @@ return {
           },
         },
       },
+      tinymist = {
+        settings = {
+          formatterMode = 'typstyle',
+          exportPdf = 'onType',
+          semanticTokens = 'disable',
+        },
+      },
     }
 
     -- Setup inlay hints

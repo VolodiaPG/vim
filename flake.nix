@@ -136,6 +136,7 @@
               basedpyright
               ltex-ls
               texlab
+              tinymist
             ];
           };
 
@@ -192,6 +193,7 @@
               ltex_extra-nvim
               codecompanion-nvim
               noice-nvim
+              typst-preview-nvim
 
               # sometimes you have to fix some names
               {
