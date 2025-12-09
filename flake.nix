@@ -134,7 +134,7 @@
               rPackages.languageserver
               air-formatter
               basedpyright
-              ltex-ls
+              # ltex-ls
               texlab
               tinymist
             ];
@@ -190,10 +190,11 @@
               rainbow-delimiters-nvim
               fidget-nvim
               elixir-tools-nvim
-              ltex_extra-nvim
+              # ltex_extra-nvim
               codecompanion-nvim
               noice-nvim
               typst-preview-nvim
+              spellwarn-nvim
 
               # sometimes you have to fix some names
               {

@@ -84,6 +84,10 @@ vim.opt.ttimeoutlen = 0
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
+-- Spell checking
+opt.spell = true
+opt.spelllang = 'en_us'
+
 -- Cursor options
 opt.guicursor = {
   'n-v-c:block',
