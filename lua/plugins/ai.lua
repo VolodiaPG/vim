@@ -102,7 +102,7 @@ local opts = {
           },
           schema = {
             model = {
-              default = 'google/gemini-2.5-flash',
+              default = 'google/gemini-3-flash-preview',
             },
           },
         })
@@ -113,7 +113,7 @@ local opts = {
     chat = { adapter = 'openrouter', model = 'anthropic/claude-4.5-sonnet' },
     inline = {
       adapter = 'openrouter',
-      model = 'google/gemini-2.5-flash',
+      model = 'google/gemini-3-flash-preview',
       keymaps = {
         accept_change = {
           modes = { n = 'ga' }, -- Remember this as DiffAccept
