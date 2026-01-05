@@ -311,6 +311,8 @@
             # they contain a settings set defined above
             # see :help nixCats.flake.outputs.settings
             settings = {
+              suffix-path = true;
+              suffix-LD = true;
               wrapRc = true;
               # IMPORTANT:
               # your alias may not conflict with your other packages.
@@ -336,6 +338,8 @@
           }:
           {
             settings = {
+              suffix-path = true;
+              suffix-LD = true;
               wrapRc = false;
               unwrappedCfgPath = "/Users/volodia/Documents/vim";
             };
