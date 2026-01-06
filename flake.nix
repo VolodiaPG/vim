@@ -27,6 +27,11 @@
       flake = false;
     };
 
+    plugins-opencode-nvim = {
+      url = "github:NickvanDyke/opencode.nvim";
+      flake = false;
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -190,8 +195,6 @@
                 lazygit-nvim
                 harpoon2
                 vim-tmux-navigator
-                supermaven-nvim
-                codecompanion-nvim
                 typst-preview-nvim
                 spellwarn-nvim
                 nui-nvim
@@ -228,6 +231,11 @@
                 telescope-fzf-native-nvim
                 telescope-ui-select-nvim
                 telescope-nvim
+              ];
+              ai = [
+                supermaven-nvim
+                codecompanion-nvim
+                pkgs.neovimPlugins.opencode-nvim
               ];
             };
           };

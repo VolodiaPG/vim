@@ -61,6 +61,22 @@
         "type": "github"
       }
     },
+    "plugins-opencode-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767721565,
+        "narHash": "sha256-L92X+hchWT7OiSE3cFxm6q+8JfE8lyfVjiDtemmossY=",
+        "owner": "NickvanDyke",
+        "repo": "opencode.nvim",
+        "rev": "93567824fb171d0740d0f7f1e85118bb061f1811",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NickvanDyke",
+        "repo": "opencode.nvim",
+        "type": "github"
+      }
+    },
     "plugins-treesitter-textobjects": {
       "flake": false,
       "locked": {
@@ -100,6 +116,7 @@
         "nixpkgs": "nixpkgs",
         "plugins-catppuccin": "plugins-catppuccin",
         "plugins-inlay-hints": "plugins-inlay-hints",
+        "plugins-opencode-nvim": "plugins-opencode-nvim",
         "plugins-treesitter-textobjects": "plugins-treesitter-textobjects",
         "plugins-vimtex": "plugins-vimtex"
       }

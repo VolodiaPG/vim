@@ -9,7 +9,7 @@ map({ 'n', 'i' }, '<Right>', '<Nop>', { silent = true, noremap = true, desc = 'D
 map({ 'n', 'i' }, '<Left>', '<Nop>', { silent = true, noremap = true, desc = 'Disable Left arrow key' })
 
 -- Better window navigation
--- map('n', '<C-h>', '<C-w>h', { desc = 'Navigate to the left window' })
+--c map('n', '<C-h>', '<C-w>h', { desc = 'Navigate to the left window' })
 -- map('n', '<C-j>', '<C-w>j', { desc = 'Navigate to the bottom window' })
 -- map('n', '<C-k>', '<C-w>k', { desc = 'Navigate to the top window' })
 -- map('n', '<C-l>', '<C-w>l', { desc = 'Navigate to the right window' })
@@ -43,7 +43,7 @@ map('x', 'p', [["_dP]], { desc = 'Paste without yanking selection' })
 map({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without yanking' })
 
 -- Clear search highlights
-map('n', '<leader>h', ':nohlsearch<CR>', { desc = 'Clear search highlights' })
+-- map('n', '<leader>h', ':nohlsearch<CR>', { desc = 'Clear search highlights' })
 
 -- Save file
 map('n', '<C-s>', ':w<CR>', { desc = 'Save file' })
@@ -51,12 +51,12 @@ map('n', '<C-s>', ':w<CR>', { desc = 'Save file' })
 -- Better buffer navigation
 map('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer' })
 map('n', '<S-h>', ':bprevious<CR>', { desc = 'Previous buffer' })
-map('n', '<leader>c', ':bd<CR>', { desc = 'Close buffer' })
+-- map('n', '<leader>c', ':bd<CR>', { desc = 'Close buffer' })
 
 -- Format document
-map('n', '<leader>f', function()
-  vim.lsp.buf.format { async = true }
-end, { desc = 'Format document' })
+-- map('n', '<leader>f', function()
+--   vim.lsp.buf.format { async = true }
+-- end, { desc = 'Format document' })
 
 -- Diagnostic navigation
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
