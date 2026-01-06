@@ -329,25 +329,12 @@ require('lze').load {
             g = true,
           },
         },
-        operators = { gc = 'Comments' },
         icons = {
           breadcrumb = '»',
           separator = '➜',
           group = '+',
         },
-        window = {
-          border = 'rounded',
-          position = 'bottom',
-          margin = { 1, 0, 1, 0 },
-          padding = { 2, 2, 2, 2 },
-        },
-        ignore_missing = false,
         show_help = true,
-        triggers = 'auto',
-        triggers_blacklist = {
-          i = { 'j', 'k' },
-          v = { 'j', 'k' },
-        },
         disable = {
           buftypes = {},
           filetypes = { 'TelescopePrompt' },
@@ -488,13 +475,6 @@ require('lze').load {
   {
     'vim-tmux-navigator',
     for_cat = 'general.always',
-    keys = {
-      { '<C-h>', mode = { 'n' } },
-      { '<C-j>', mode = { 'n' } },
-      { '<C-k>', mode = { 'n' } },
-      { '<C-l>', mode = { 'n' } },
-      { '<C-\\>', mode = { 'n' } },
-    },
     event = 'DeferredUIEnter',
   },
 
@@ -515,6 +495,7 @@ require('lze').load {
       end
       vim.g.vimtex_compiler_method = 'latexmk'
       vim.g.vimtex_quickfix_mode = 2
+      vim.g.vimtex_syntax_enabled = false
 
       vim.keymap.set('n', '<leader>tc', '<cmd>VimtexCompile<cr>', { desc = 'Compile Tex' })
       vim.keymap.set('n', '<leader>tS', '<cmd>VimtexStopAll<cr>', { desc = 'Stop all Tex compilations' })
@@ -784,15 +765,15 @@ require('lze').load {
     end,
   },
 
-  -- Spellwarn
-  {
-    'spellwarn.nvim',
-    for_cat = 'general.extra',
-    event = { 'BufEnter' },
-    after = function(plugin)
-      require('spellwarn').setup {}
-    end,
-  },
+  -- -- Spellwarn
+  -- {
+  --   'spellwarn.nvim',
+  --   for_cat = 'general.extra',
+  --   event = { 'BufEnter' },
+  --   after = function(plugin)
+  --     require('spellwarn').setup {}
+  --   end,
+  -- },
 
   -- Colorizer
   {

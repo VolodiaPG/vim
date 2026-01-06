@@ -1,4 +1,9 @@
 -- Completion configuration using blink.cmp
+local load_w_after = function(name)
+  vim.cmd.packadd(name)
+  vim.cmd.packadd(name .. '/after')
+end
+
 return {
   {
     'cmp-cmdline',

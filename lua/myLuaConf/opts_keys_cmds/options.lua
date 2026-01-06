@@ -9,6 +9,7 @@ g.mapleader = ' '
 g.maplocalleader = ' '
 
 -- Clipboard settings
+-- Share clipboard between vim and system
 opt.clipboard = 'unnamedplus'
 
 -- Line numbers
@@ -101,6 +102,9 @@ opt.guicursor = {
 -- Show invisible characters
 opt.list = true
 opt.listchars = 'eol:↲,space: ,tab:   ,trail:•,extends:→,precedes:←,nbsp:␣'
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
 
 -- Command line height
 opt.cmdheight = 2
