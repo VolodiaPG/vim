@@ -4,8 +4,38 @@
   description = "A Lua-natic's neovim flake, with extra cats! nixCats!";
 
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+
+    plugins-treesitter-textobjects = {
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
+      flake = false;
+    };
+
+    plugins-inlay-hints = {
+      url = "github:MysticalDevil/inlay-hints.nvim";
+      flake = false;
+    };
+
+    plugins-catppuccin = {
+      url = "github:catppuccin/nvim";
+      flake = false;
+    };
+
+    plugins-vimtex = {
+      url = "github:lervag/vimtex";
+      flake = false;
+    };
+
+    # see :help nixCats.flake.inputs
+    # If you want your plugin to be loaded by the standard overlay,
+    # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
+    # Then you should name it "plugins-something"
+    # If you wish to define a custom build step not handled by nixpkgs,
+    # then you should name it in a different format, and deal with that in the
+    # overlay defined for custom builds in the overlays directory.
+    # for specific tags, branches and commits, see:
+    # https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
@@ -144,98 +174,62 @@
           # also you dont have to download everything via nix if you dont want.
           # but you have the option, and that is demonstrated here.
           startupPlugins = with pkgs.vimPlugins; {
-            general = [
-              # LazyVim
-              lazy-nvim
-              LazyVim
-              bufferline-nvim
-              cmp-buffer
-              cmp-nvim-lsp
-              cmp-path
-              cmp_luasnip
-              lspkind-nvim
-              conform-nvim
-              flash-nvim
-              lazygit-nvim
-              friendly-snippets
-              gitsigns-nvim
-              indent-blankline-nvim
-              lualine-nvim
-              nvim-cmp
-              nvim-lint
-              nvim-lspconfig
-              nvim-notify
-              lsp-inlayhints-nvim
-              vim-tmux-navigator
-              nvim-treesitter-context
-              nvim-treesitter-textobjects
-              nvim-ts-autotag
-              vimtex
-              cmp-vimtex
-              harpoon2
-              nvim-ts-context-commentstring
-              nvim-web-devicons
-              persistence-nvim
-              plenary-nvim
-              telescope-fzf-native-nvim
-              telescope-nvim
-              todo-comments-nvim
-              trouble-nvim
-              staline-nvim
-              vim-illuminate
-              which-key-nvim
-              nvim-treesitter-textobjects
-              nvim-treesitter.withAllGrammars
-              supermaven-nvim
-              rainbow-delimiters-nvim
-              fidget-nvim
-              elixir-tools-nvim
-              # ltex_extra-nvim
-              codecompanion-nvim
-              noice-nvim
-              typst-preview-nvim
-              spellwarn-nvim
-
-              # sometimes you have to fix some names
-              {
-                plugin = luasnip;
-                name = "LuaSnip";
-              }
-              {
-                plugin = catppuccin-nvim;
-                name = "catppuccin";
-              }
-              {
-                plugin = mini-ai;
-                name = "mini.ai";
-              }
-              {
-                plugin = mini-icons;
-                name = "mini.icons";
-              }
-              {
-                plugin = mini-bufremove;
-                name = "mini.bufremove";
-              }
-              {
-                plugin = mini-comment;
-                name = "mini.comment";
-              }
-              {
-                plugin = mini-indentscope;
-                name = "mini.indentscope";
-              }
-              {
-                plugin = mini-pairs;
-                name = "mini.pairs";
-              }
-              {
-                plugin = mini-surround;
-                name = "mini.surround";
-              }
-              # you could do this within the lazy spec instead if you wanted
-              # and get the new names from `:NixCats pawsible` debug command
-            ];
+            general = {
+              always = [
+                lze
+                lzextras
+                nvim-notify
+                plenary-nvim
+                vim-sleuth
+                nvim-lspconfig
+                nvim-lint
+                conform-nvim
+                gitsigns-nvim
+                vim-surround
+                staline-nvim
+                lazygit-nvim
+                harpoon2
+                vim-tmux-navigator
+                supermaven-nvim
+                codecompanion-nvim
+                typst-preview-nvim
+                spellwarn-nvim
+                nui-nvim
+                elixir-tools-nvim
+                nvim-surround
+                rainbow-delimiters-nvim
+                lazydev-nvim
+                pkgs.neovimPlugins.inlay-hints
+                pkgs.neovimPlugins.catppuccin
+                pkgs.neovimPlugins.vimtex
+              ];
+              extra = [
+                nvim-web-devicons
+                noice-nvim
+                fidget-nvim
+                which-key-nvim
+                comment-nvim
+                indent-blankline-nvim
+                trouble-nvim
+                nvim-colorizer-lua
+              ];
+              blink = [
+                luasnip
+                cmp-cmdline
+                blink-cmp
+                blink-compat
+                colorful-menu-nvim
+              ];
+              treesitter = [
+                nvim-treesitter.withAllGrammars
+                pkgs.neovimPlugins.treesitter-textobjects
+              ];
+              telescope = [
+                telescope-fzf-native-nvim
+                telescope-ui-select-nvim
+                telescope-nvim
+              ];
+            };
           };
 
           # not loaded automatically at startup.
@@ -324,6 +318,9 @@
             categories = {
               general = true;
               test = false;
+              lspDebugMode = false;
+              themer = true;
+              colorscheme = "catppuccin";
             };
             extra = { };
           };
@@ -346,10 +343,14 @@
             categories = {
               general = true;
               test = false;
+              lspDebugMode = false;
+              themer = true;
+              colorscheme = "catppuccin";
             };
             extra = { };
           };
       };
+
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.
       defaultPackageName = "nvim";
