@@ -393,21 +393,6 @@ require('lze').load {
   {
     'harpoon',
     for_cat = 'general.always',
-    keys = {
-      { '<leader>hs', mode = { 'n' } },
-      { '<leader>hd', mode = { 'n' } },
-      { '<leader>hp', mode = { 'n' } },
-      { '<leader>hn', mode = { 'n' } },
-      { '&', mode = { 'n' } },
-      { '[', mode = { 'n' } },
-      { '{', mode = { 'n' } },
-      { '(', mode = { 'n' } },
-      { "'", mode = { 'n' } },
-      { '"', mode = { 'n' } },
-      { ')', mode = { 'n' } },
-      { '}', mode = { 'n' } },
-      { ']', mode = { 'n' } },
-    },
     load = function(name)
       vim.cmd.packadd 'plenary.nvim'
       vim.cmd.packadd 'telescope.nvim'
@@ -418,7 +403,7 @@ require('lze').load {
       require('telescope').load_extension 'harpoon'
 
       vim.keymap.set('n', '<leader>hs', function()
-        harpoon:list():append()
+        harpoon:list():add()
       end, { desc = 'Harpoon add file' })
 
       vim.keymap.set('n', '<leader>hd', function()
