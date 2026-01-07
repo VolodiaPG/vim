@@ -30,18 +30,19 @@ require('lze').load {
     -- NOTE: Use on_require to load when LSP functionality is needed
     on_require = { 'lspconfig' },
     -- Use keys to load when LSP commands are used
-    -- keys = {
-    --   { 'gd', mode = 'n' },
-    --   { 'gr', mode = 'n' },
-    --   { 'gI', mode = 'n' },
-    --   { 'gD', mode = 'n' },
-    --   { 'K', mode = 'n' },
-    --   { '<leader>rn', mode = 'n' },
-    --   { '<leader>ca', mode = 'n' },
-    --   { '<leader>D', mode = 'n' },
-    --   { '<leader>ds', mode = 'n' },
-    --   { '<leader>ws', mode = 'n' },
-    -- },
+    keys = {
+      { 'gd', vim.lsp.buf.definition, 'Goto Definition' },
+      { 'gr', require('telescope.builtin').lsp_references, 'Goto References' },
+      { 'gI', vim.lsp.buf.implementation, 'Goto Implementation' },
+      { 'gD', vim.lsp.buf.declaration, 'Goto Declaration' },
+      { 'K', vim.lsp.buf.hover, 'Hover Documentation' },
+      { '<C-k>', vim.lsp.buf.signature_help, 'Signature Help' },
+      { '<leader>rn', vim.lsp.buf.rename, 'Rename' },
+      { '<leader>c,', vim.lsp.buf.code_action, 'Code Action' },
+      { '<leader>D', vim.lsp.buf.type_definition, 'Type Definition' },
+      { '<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols' },
+      { '<leader>dws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols' },
+    },
     lsp = function(plugin)
       vim.lsp.config(plugin.name, plugin.lsp or {})
       vim.lsp.enable(plugin.name)
