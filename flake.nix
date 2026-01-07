@@ -4,7 +4,7 @@
   description = "A Lua-natic's neovim flake, with extra cats! nixCats!";
 
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     plugins-treesitter-textobjects = {
