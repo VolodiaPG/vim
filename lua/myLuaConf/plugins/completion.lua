@@ -43,6 +43,15 @@ return {
     'blink.cmp',
     for_cat = 'general.blink',
     event = 'DeferredUIEnter',
+    keys = {
+      {
+        '<C-y>',
+        'accept',
+        mode = 'i',
+      },
+      { '<Tab>', 'next_source', mode = 'i' },
+      { '<S-Tab>', 'prev_source', mode = 'i' },
+    },
     after = function(_)
       require('blink.cmp').setup {
         -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
