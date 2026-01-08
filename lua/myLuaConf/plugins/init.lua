@@ -31,7 +31,7 @@ require('lze').load {
           percentage = 0.15,
         },
         integrations = {
-          cmp = true,
+          blink_cmp = true,
           gitsigns = true,
           nvimtree = true,
           telescope = true,

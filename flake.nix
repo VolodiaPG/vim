@@ -148,7 +148,7 @@
               stdenv.cc.cc
               lua-language-server
               nixd
-              nixfmt-rfc-style
+              nixfmt 
               stylua
               lexical
               shfmt
@@ -329,6 +329,8 @@
               lspDebugMode = false;
               themer = true;
               colorscheme = "catppuccin";
+              lint = true;
+              format = true;
             };
             extra = { };
           };
@@ -354,6 +356,10 @@
               lspDebugMode = false;
               themer = true;
               colorscheme = "catppuccin";
+              lint = true;
+              format = true;
+
+              # debug = true;
             };
             extra = { };
           };

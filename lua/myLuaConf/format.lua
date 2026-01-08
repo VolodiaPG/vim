@@ -5,18 +5,7 @@ require('lze').load {
     'conform.nvim',
     for_cat = 'general.always',
     event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
-    keys = {
-      {
-        '<leader>cf',
-        function()
-          require('conform').format { async = true, lsp_fallback = true }
-        end,
-        mode = '',
-        desc = 'Format buffer',
-      },
-    },
-    after = function(plugin)
+    after = function(_)
       require('conform').setup {
         formatters_by_ft = {
           lua = { 'stylua' },
