@@ -414,35 +414,35 @@ require('lze').load {
         harpoon:list():select(1)
       end, { desc = 'Harpoon file 1' })
 
-      vim.keymap.set('n', '[', function()
+      vim.keymap.set('n', 'é', function()
         harpoon:list():select(2)
       end, { desc = 'Harpoon file 2' })
 
-      vim.keymap.set('n', '{', function()
+      vim.keymap.set('n', '"', function()
         harpoon:list():select(3)
       end, { desc = 'Harpoon file 3' })
 
-      vim.keymap.set('n', '(', function()
+      vim.keymap.set('n', "'", function()
         harpoon:list():select(4)
       end, { desc = 'Harpoon file 4' })
 
-      vim.keymap.set('n', "'", function()
+      vim.keymap.set('n', '(', function()
         harpoon:list():select(5)
       end, { desc = 'Harpoon file 5' })
 
-      vim.keymap.set('n', '"', function()
+      vim.keymap.set('n', '§', function()
         harpoon:list():select(6)
       end, { desc = 'Harpoon file 6' })
 
-      vim.keymap.set('n', ')', function()
+      vim.keymap.set('n', 'è', function()
         harpoon:list():select(7)
       end, { desc = 'Harpoon file 7' })
 
-      vim.keymap.set('n', '}', function()
+      vim.keymap.set('n', '!', function()
         harpoon:list():select(8)
       end, { desc = 'Harpoon file 8' })
 
-      vim.keymap.set('n', ']', function()
+      vim.keymap.set('n', 'ç', function()
         harpoon:list():select(9)
       end, { desc = 'Harpoon file 9' })
 
@@ -459,10 +459,9 @@ require('lze').load {
   -- Tmux navigator
   {
     'vim-tmux-navigator',
-    for_cat = 'general.always',
     event = 'DeferredUIEnter',
   },
-
+  --
   -- VimTeX
   {
     'vimtex',
@@ -495,19 +494,6 @@ require('lze').load {
     after = function(plugin)
       require('typst-preview').setup {
         extra_args = { '--font-path=./' },
-      }
-    end,
-  },
-
-  -- Supermaven
-  {
-    'supermaven-nvim',
-    for_cat = 'general.ai',
-    event = 'DeferredUIEnter',
-    after = function(plugin)
-      require('supermaven-nvim').setup {
-        disable_inline_completion = false,
-        disable_keymaps = false,
       }
     end,
   },

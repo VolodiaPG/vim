@@ -35,6 +35,20 @@ return {
     end,
   },
   {
+    'supermaven-nvim',
+    for_cat = { 'general.blink', 'general.ai' },
+    dep_of = { 'blink.cmp' },
+    after = function(_)
+      require('supermaven-nvim').setup {
+        keymaps = {
+          accept_suggestion = nil,
+        },
+        disable_inline_completion = true,
+        disable_keymaps = true,
+      }
+    end,
+  },
+  {
     'colorful-menu.nvim',
     for_cat = 'general.blink',
     on_plugin = { 'blink.cmp' },
@@ -49,8 +63,6 @@ return {
         'accept',
         mode = 'i',
       },
-      { '<Tab>', 'next_source', mode = 'i' },
-      { '<S-Tab>', 'prev_source', mode = 'i' },
     },
     after = function(_)
       require('blink.cmp').setup {

@@ -9,10 +9,10 @@ map({ 'n', 'i' }, '<Right>', '<Nop>', { silent = true, noremap = true, desc = 'D
 map({ 'n', 'i' }, '<Left>', '<Nop>', { silent = true, noremap = true, desc = 'Disable Left arrow key' })
 
 -- Better window navigation
---c map('n', '<C-h>', '<C-w>h', { desc = 'Navigate to the left window' })
--- map('n', '<C-j>', '<C-w>j', { desc = 'Navigate to the bottom window' })
--- map('n', '<C-k>', '<C-w>k', { desc = 'Navigate to the top window' })
--- map('n', '<C-l>', '<C-w>l', { desc = 'Navigate to the right window' })
+map('n', '<C-h>', '<C-w>h', { desc = 'Navigate to the left window' })
+map('n', '<C-j>', '<C-w>j', { desc = 'Navigate to the bottom window' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Navigate to the top window' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Navigate to the right window' })
 
 -- Resize windows
 map('n', '<C-Up>', ':resize -2<CR>', { silent = true, desc = 'Decrease window height' })
