@@ -528,6 +528,14 @@ require('lze').load {
         mode = { 'n', 'v' },
       },
       {
+        '<leader>cs',
+        function()
+          require('opencode').ask '@this '
+        end,
+        desc = 'Ask opencode about current selection',
+        mode = 'v' ,
+      },
+      {
         '<leader>cn',
         function()
           require('opencode').command '/new'
@@ -537,7 +545,7 @@ require('lze').load {
       {
         '<leader>ce',
         function()
-          require('opencode').prompt 'Explain @cursor and its context'
+          require('opencode').prompt 'Explain @this and its context'
         end,
         desc = 'Explain code near cursor',
       },
@@ -558,7 +566,7 @@ require('lze').load {
       {
         '<leader>co',
         function()
-          require('opencode').prompt 'Optimize @selection for performance and readability'
+          require('opencode').prompt 'Optimize @this for performance and readability'
         end,
         desc = 'Optimize selection',
         mode = 'v',
@@ -566,7 +574,7 @@ require('lze').load {
       {
         '<leader>cd',
         function()
-          require('opencode').prompt 'Add documentation comments for @selection'
+          require('opencode').prompt 'Add documentation comments for @this'
         end,
         desc = 'Document selection',
         mode = 'v',
@@ -574,7 +582,7 @@ require('lze').load {
       {
         '<leader>ct',
         function()
-          require('opencode').prompt 'Add tests for @selection'
+          require('opencode').prompt 'Add tests for @this'
         end,
         desc = 'Test selection',
         mode = 'v',
@@ -587,15 +595,6 @@ require('lze').load {
         auto_reload = false, -- Automatically reload buffers edited by opencode
         auto_focus = false, -- Focus the opencode window after prompting
         command = 'opencode', -- Command to launch opencode
-        context = { -- Context to inject in prompts
-          ['@file'] = require('opencode.context').file,
-          ['@files'] = require('opencode.context').files,
-          ['@cursor'] = require('opencode.context').cursor_position,
-          ['@selection'] = require('opencode.context').visual_selection,
-          ['@diagnostics'] = require('opencode.context').diagnostics,
-          ['@quickfix'] = require('opencode.context').quickfix,
-          ['@diff'] = require('opencode.context').git_diff,
-        },
         win = {
           position = 'right',
           -- See https://github.com/folke/snacks.nvim/blob/main/docs/win.md for more window options
