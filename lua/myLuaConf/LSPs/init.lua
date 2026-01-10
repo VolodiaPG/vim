@@ -166,13 +166,14 @@ require('lze').load {
     filetypes = { 'R', 'Rmd' },
   } },
   {
-    'elixirls',
-    enabled = nixCats 'always',
+    'expert',
     lsp = {
       settings = {
-        filetypes = { 'elixir', 'eelixir' },
-        elixirls = {
-          cmd = { 'elixir-ls' },
+
+        filetypes = { 'elixir', 'heex', 'eex' },
+        expert = {
+          cmd = { 'expert', '--stdio' },
+          root_markers = { 'mix.exs', '.git' },
         },
       },
     },

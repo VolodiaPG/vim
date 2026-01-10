@@ -32,6 +32,11 @@
       flake = false;
     };
 
+    elixir-expert = {
+      url = "github:elixir-lang/expert";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -148,7 +153,7 @@
               stdenv.cc.cc
               lua-language-server
               nixd
-              nixfmt 
+              nixfmt
               stylua
               lexical
               shfmt
@@ -163,7 +168,7 @@
               shellcheck
               shellharden
               typos
-              elixir-ls
+              inputs.elixir-expert.packages.${system}.expert
               bash-language-server
               tailwindcss-language-server
               rPackages.languageserver
