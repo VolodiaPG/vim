@@ -20,7 +20,7 @@ return {
       -- See `:help nvim-treesitter`
       -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
       vim.defer_fn(function()
-        require('nvim-treesitter').setup {
+        require('nvim-treesitter.configs').setup {
           -- require('nvim-treesitter.configs').setup {
           --parser_install_dir = absolute_path,
 
