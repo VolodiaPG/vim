@@ -8,6 +8,10 @@ map({ 'n', 'i' }, '<Down>', '<Nop>', { silent = true, noremap = true, desc = 'Di
 map({ 'n', 'i' }, '<Right>', '<Nop>', { silent = true, noremap = true, desc = 'Disable Right arrow key' })
 map({ 'n', 'i' }, '<Left>', '<Nop>', { silent = true, noremap = true, desc = 'Disable Left arrow key' })
 
+-- Disable autocompletion keys
+map({ 'i' }, '<Tab>', '<Nop>', { silent = true, noremap = true, desc = 'Disable Tab by default' })
+map({ 'i' }, '<C-y>', '<Nop>', { silent = true, noremap = true, desc = 'Disable C-y by default' })
+
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h', { desc = 'Navigate to the left window' })
 map('n', '<C-j>', '<C-w>j', { desc = 'Navigate to the bottom window' })
