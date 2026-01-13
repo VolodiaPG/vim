@@ -160,10 +160,7 @@ require('lze').load {
     },
   },
   { 'r_language_server', enabled = nixCats 'always', lsp = {
-    filetypes = { 'R', 'Rmd' },
-  } },
-  { 'air', enabled = nixCats 'always', lsp = {
-    filetypes = { 'R', 'Rmd' },
+    filetypes = { 'r', 'rmd' },
   } },
   {
     'expert',
