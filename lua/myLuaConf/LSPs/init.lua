@@ -204,6 +204,10 @@ require('lze').load {
             onEdit = false,
             onOpenAndSave = true,
           },
+          inlayHints = {
+            labelDefinitions = false,
+            labelReferences = false,
+          },
           diagnosticsDelay = 300,
           latexFormatter = 'latexindent',
         },
