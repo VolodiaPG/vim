@@ -157,7 +157,7 @@
               stylua
               lexical
               shfmt
-              isort
+              # isort
               ruff
               prettierd
               rustfmt
