@@ -9,7 +9,7 @@ require('lze').load {
       require('conform').setup {
         formatters_by_ft = {
           lua = { 'stylua' },
-          python = { 'isort', 'black' },
+          python = { 'isort', 'ruff' },
           javascript = { 'prettierd' },
           typescript = { 'prettierd' },
           javascriptreact = { 'prettierd' },

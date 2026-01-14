@@ -158,7 +158,7 @@
               lexical
               shfmt
               isort
-              black
+              ruff
               prettierd
               rustfmt
               go
