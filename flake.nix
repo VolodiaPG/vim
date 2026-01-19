@@ -177,6 +177,7 @@
               # ltex-ls
               texlab
               tinymist
+              harper
             ];
           };
 
