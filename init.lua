@@ -24,6 +24,10 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_picker = 'snacks'
 vim.opt.cmdheight = 0
 
+-- Start the server
+local socket_path = '/tmp/nvim_' .. vim.loop.os_getpid()
+vim.fn.serverstart(socket_path)
+
 vim.api.nvim_create_user_command('FormatParagraph80', function()
   local save_cursor = vim.fn.getpos '.'
 
