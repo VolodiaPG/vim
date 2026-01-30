@@ -18,10 +18,10 @@ require('lze').load {
     -- event = 'DeferredUIEnter',
     after = function(plugin)
       require('catppuccin').setup {
-        flavour = 'macchiato',
+        flavour = 'mocha',
         background = {
-          light = 'macchiato',
-          dark = 'macchiato',
+          light = 'latte',
+          dark = 'mocha',
         },
         transparent_background = true,
         term_colors = true,
@@ -533,7 +533,7 @@ require('lze').load {
           require('opencode').ask '@this '
         end,
         desc = 'Ask opencode about current selection',
-        mode = 'v' ,
+        mode = 'v',
       },
       {
         '<leader>cn',

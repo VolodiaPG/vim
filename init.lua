@@ -28,6 +28,9 @@ vim.opt.cmdheight = 0
 local socket_path = '/tmp/nvim_' .. vim.loop.os_getpid()
 vim.fn.serverstart(socket_path)
 
+-- Check the theme
+vim.fn.jobstart 'theme-switcher'
+
 vim.api.nvim_create_user_command('FormatParagraph80', function()
   local save_cursor = vim.fn.getpos '.'
 
