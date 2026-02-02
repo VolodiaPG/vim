@@ -54,13 +54,13 @@ require('lze').load {
 
       local C = require('catppuccin.palettes').get_palette()
       local mode_colors = {
-        ['n'] = { 'NORMAL', '#38b1f0' },
-        ['no'] = { 'N-PENDING', '#38b1f0' },
-        ['i'] = { 'INSERT', '#9ece6a' },
-        ['ic'] = { 'INSERT', '#9ece6a' },
+        ['n'] = { 'NORMAL', C.blue },
+        ['no'] = { 'N-PENDING', C.blue },
+        ['i'] = { 'INSERT', C.green },
+        ['ic'] = { 'INSERT', C.green },
         ['t'] = { 'TERMINAL', C.green },
-        ['v'] = { 'VISUAL', '#c678dd' },
-        ['V'] = { 'V-LINE', '#c678dd' },
+        ['v'] = { 'VISUAL', C.mauve },
+        ['V'] = { 'V-LINE', C.mauve },
         ['\22'] = { 'V-BLOCK', C.flamingo },
         ['R'] = { 'REPLACE', C.maroon },
         ['Rv'] = { 'V-REPLACE', C.maroon },
