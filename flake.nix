@@ -173,7 +173,8 @@
               tailwindcss-language-server
               rPackages.languageserver
               air-formatter
-              basedpyright
+              # basedpyright
+              ty
               # ltex-ls
               texlab
               tinymist
@@ -428,7 +429,7 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            shellHook = "";
           };
         };
       }

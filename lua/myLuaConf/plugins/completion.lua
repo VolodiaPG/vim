@@ -6,17 +6,6 @@ end
 
 return {
   {
-    'cmp-cmdline',
-    for_cat = 'general.blink',
-    on_plugin = { 'blink.cmp' },
-    load = load_w_after,
-  },
-  {
-    'blink.compat',
-    for_cat = 'general.blink',
-    dep_of = { 'cmp-cmdline' },
-  },
-  {
     'luasnip',
     for_cat = 'general.blink',
     dep_of = { 'blink.cmp' },
@@ -33,6 +22,17 @@ return {
         end
       end)
     end,
+  },
+  {
+    'cmp-cmdline',
+    for_cat = 'general.blink',
+    on_plugin = { 'blink.cmp' },
+    load = load_w_after,
+  },
+  {
+    'blink.compat',
+    for_cat = 'general.blink',
+    dep_of = { 'cmp-cmdline' },
   },
   {
     'supermaven-nvim',

@@ -178,7 +178,10 @@ require('lze').load {
   { 'bashls', enabled = nixCats 'always', lsp = {
     filetypes = { 'sh', 'bash' },
   } },
-  { 'basedpyright', enabled = nixCats 'always', lsp = {
+  -- { 'basedpyright', enabled = nixCats 'always', lsp = {
+  --   filetypes = { 'python' },
+  -- } },
+  { 'ty', enabled = nixCats 'always', lsp = {
     filetypes = { 'python' },
   } },
   {
