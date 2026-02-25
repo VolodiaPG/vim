@@ -238,6 +238,7 @@
                 telescope-fzf-native-nvim
                 telescope-ui-select-nvim
                 telescope-nvim
+                telescope-live-grep-args-nvim
               ];
               ai = [
                 supermaven-nvim
