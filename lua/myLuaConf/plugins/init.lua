@@ -471,7 +471,8 @@ require('lze').load {
     after = function(_)
       local os_name = vim.loop.os_uname().sysname
       if os_name == 'Linux' then
-        vim.g.vimtex_view_general_viewer = 'qpdfview'
+        -- vim.g.vimtex_view_general_viewer = 'qpdfview'
+        vim.g.vimtex_view_general_viewer = 'zathura'
       else
         vim.g.vimtex_view_method = 'skim'
         vim.g.vimtex_view_skim_sync = 1
