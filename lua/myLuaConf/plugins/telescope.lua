@@ -65,7 +65,7 @@ require('lze').load {
         desc = '[S]earch [/] in Open Files',
       },
       {
-        '<leader><leader>s',
+        '<leader>sb',
         function()
           return require('telescope.builtin').buffers()
         end,
