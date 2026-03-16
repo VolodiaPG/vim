@@ -34,7 +34,6 @@
 
     elixir-expert = {
       url = "github:elixir-lang/expert";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # see :help nixCats.flake.inputs
