@@ -155,7 +155,6 @@
               nixd
               nixfmt
               stylua
-              lexical
               shfmt
               # isort
               ruff
