@@ -4,7 +4,7 @@
   description = "A Lua-natic's neovim flake, with extra cats! nixCats!";
 
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     plugins-treesitter-textobjects = {
@@ -240,7 +240,6 @@
               ];
               ai = [
                 supermaven-nvim
-                codecompanion-nvim
                 pkgs.neovimPlugins.opencode-nvim
               ];
             };
