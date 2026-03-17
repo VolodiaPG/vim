@@ -597,7 +597,7 @@ require('lze').load {
 
                  - Correct any spelling, grammar, or punctuation errors.
                  - Do not use any contractions like I'm or you're.
-                 - Just send me the revised text without anything else.
+                 - Just replace the orignal text with the revised text without anything else.
 
                  Also beware to make your response follow these requirements:
 
@@ -624,7 +624,7 @@ require('lze').load {
 
                  - Correct any spelling, grammar, or punctuation errors.
                  - Do not use any contractions like I'm or you're.
-                 - Just send me the revised text without anything else.
+                 - Just replace the orignal text with the revised text without anything else.
 
                  Also beware to make your response follow these requirements:
 
