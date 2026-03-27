@@ -167,7 +167,7 @@ require('lze').load {
     lsp = {
       settings = {
 
-        filetypes = { 'elixir', 'heex', 'eex' },
+        filetypes = { 'elixir', 'heex', 'eex', 'eelixir' },
         expert = {
           cmd = { 'expert', '--stdio' },
           root_markers = { 'mix.exs', '.git' },
