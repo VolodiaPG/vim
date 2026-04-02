@@ -86,7 +86,7 @@ opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
 -- Spell checking
-opt.spell = true
+opt.spell = false
 opt.spelllang = 'en_us'
 
 -- Cursor options

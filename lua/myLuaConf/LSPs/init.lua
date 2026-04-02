@@ -190,9 +190,9 @@ require('lze').load {
     lsp = {
       filetypes = { 'tex' },
       settings = {
-        ltex_plus = {
+        ltex = {
           checkFrequency = 'save',
-          language = { 'en-US', 'fr-FR' },
+          language = 'auto',
           additionalRules = {
             enablePickyRules = true,
             motherTongue = { 'fr' },
@@ -245,13 +245,13 @@ require('lze').load {
       },
     },
   },
-  {
-    'harper_ls',
-    enabled = nixCats 'always',
-    lsp = {
-      filetypes = { 'tex', 'markdown' },
-    },
-  },
+  -- {
+  --   'harper_ls',
+  --   enabled = nixCats 'always',
+  --   lsp = {
+  --     filetypes = { 'tex', 'markdown' },
+  --   },
+  -- },
   -- load = function(name)
   --   vim.cmd.packadd(name)
   --   vim.cmd.packadd 'fidget.nvim'
