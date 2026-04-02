@@ -173,7 +173,7 @@
               air-formatter
               # basedpyright
               ty
-              # ltex-ls
+              ltex-ls
               texlab
               tinymist
               harper

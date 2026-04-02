@@ -185,6 +185,13 @@ require('lze').load {
     filetypes = { 'python' },
   } },
   {
+    'ltex-ls',
+    enabled = nixCats 'always',
+    lsp = {
+      filetypes = { 'tex', 'latex' },
+    },
+  },
+  {
     'texlab',
     enabled = nixCats 'always',
     lsp = {
