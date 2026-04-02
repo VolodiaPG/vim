@@ -185,10 +185,20 @@ require('lze').load {
     filetypes = { 'python' },
   } },
   {
-    'ltex-ls',
+    'ltex',
     enabled = nixCats 'always',
     lsp = {
       filetypes = { 'tex', 'latex' },
+      settings = {
+        ltex = {
+          checkFrequency = 'save',
+          language = { 'en-US', 'fr' },
+          additionalRules = {
+            enablePickyRules = true,
+            motherTongue = { 'fr' },
+          },
+        },
+      },
     },
   },
   {
