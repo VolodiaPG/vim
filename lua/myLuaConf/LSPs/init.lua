@@ -185,14 +185,14 @@ require('lze').load {
     filetypes = { 'python' },
   } },
   {
-    'ltex',
+    'ltex_plus',
     enabled = nixCats 'always',
     lsp = {
-      filetypes = { 'tex', 'latex' },
+      filetypes = { 'tex' },
       settings = {
-        ltex = {
+        ltex_plus = {
           checkFrequency = 'save',
-          language = { 'en-US', 'fr' },
+          language = { 'en-US', 'fr-FR' },
           additionalRules = {
             enablePickyRules = true,
             motherTongue = { 'fr' },
@@ -205,7 +205,7 @@ require('lze').load {
     'texlab',
     enabled = nixCats 'always',
     lsp = {
-      filetypes = { 'tex', 'latex' },
+      filetypes = { 'tex' },
       settings = {
         texlab = {
           build = {
@@ -249,7 +249,7 @@ require('lze').load {
     'harper_ls',
     enabled = nixCats 'always',
     lsp = {
-      filetypes = { 'tex', 'latex', 'markdown' },
+      filetypes = { 'tex', 'markdown' },
     },
   },
   -- load = function(name)

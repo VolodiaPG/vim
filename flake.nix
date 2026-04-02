@@ -177,6 +177,10 @@
               ltex-ls-plus
               tinymist
               harper
+
+              # Faster than the default
+              fswatch
+              inotify-tools
             ];
           };
 
