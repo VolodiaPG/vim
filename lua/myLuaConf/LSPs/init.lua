@@ -23,6 +23,25 @@ require('lze').h.lsp.set_ft_fallback(function(name)
   end
 end)
 
+-- Custom live_grep function to search in git root
+local function find_git_root()
+  local current_file = vim.api.nvim_buf_get_name(0)
+  local current_dir
+  local cwd = vim.fn.getcwd()
+  if current_file == '' then
+    current_dir = cwd
+  else
+    current_dir = vim.fn.fnamemodify(current_file, ':h')
+  end
+
+  local git_root = vim.fn.systemlist('git -C ' .. vim.fn.escape(current_dir, ' ') .. ' rev-parse --show-toplevel')[1]
+  if vim.v.shell_error ~= 0 then
+    print 'Not a git repository. Searching on current working directory'
+    return cwd
+  end
+  return git_root
+end
+
 require('lze').load {
   {
     'nvim-lspconfig',
@@ -192,10 +211,16 @@ require('lze').load {
       settings = {
         ltex = {
           checkFrequency = 'save',
+          enabled = { 'latex', 'tex' },
           language = 'auto',
           additionalRules = {
             enablePickyRules = true,
             motherTongue = { 'fr' },
+          },
+          dictionary = {
+            ['en'] = { ':' .. find_git_root() .. '/dict.en.txt' },
+            ['fr'] = { ':' .. find_git_root() .. '/dict.fr.txt' },
+            ['auto'] = { ':' .. find_git_root() .. '/dict.auto.txt' },
           },
         },
       },
