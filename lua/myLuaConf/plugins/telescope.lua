@@ -28,7 +28,7 @@ local function live_grep_git_root()
   end
 end
 
-require('lze').load {
+return {
   {
     'telescope-live-grep-args.actions',
     for_cat = 'general.telescope',
