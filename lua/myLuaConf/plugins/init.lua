@@ -488,16 +488,16 @@ require('lze').load {
   },
 
   -- Typst preview
-  {
-    'typst-preview.nvim',
-    for_cat = 'general.always',
-    ft = 'typst',
-    after = function(plugin)
-      require('typst-preview').setup {
-        extra_args = { '--font-path=./' },
-      }
-    end,
-  },
+  -- {
+  --   'typst-preview.nvim',
+  --   for_cat = 'general.always',
+  --   ft = 'typst',
+  --   after = function(plugin)
+  --     require('typst-preview').setup {
+  --       extra_args = { '--font-path=./' },
+  --     }
+  --   end,
+  -- },
 
   {
     'opencode-nvim',

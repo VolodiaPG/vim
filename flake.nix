@@ -176,6 +176,7 @@
               texlab
               ltex-ls-plus
               tinymist
+              typstyle
               harper
 
               # Faster than the default
@@ -204,7 +205,6 @@
                 lazygit-nvim
                 harpoon2
                 vim-tmux-navigator
-                typst-preview-nvim
                 spellwarn-nvim
                 nui-nvim
                 elixir-tools-nvim

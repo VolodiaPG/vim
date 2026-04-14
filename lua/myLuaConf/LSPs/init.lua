@@ -260,12 +260,15 @@ require('lze').load {
     'tinymist',
     enabled = nixCats 'always',
     lsp = {
-      filetypes = { 'typstyle', 'typst' },
+      filetypes = { 'typst' },
       settings = {
         tinymist = {
           formatterMode = 'typstyle',
           exportPdf = 'onType',
-          semanticTokens = 'disable',
+          formatterProseWrap = true,
+          formatterPrintWidth = 80,
+          formatterIndentSize = 4,
+          -- semanticTokens = 'disable',
         },
       },
     },

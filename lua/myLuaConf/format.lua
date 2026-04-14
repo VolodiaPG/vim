@@ -28,6 +28,7 @@ require('lze').load {
           nix = { 'nixfmt' },
           r = { 'air' },
           elixir = { 'mix', 'credo' },
+          typst = { 'typstyle' },
           ['*'] = { 'trim_whitespace' },
         },
         format_after_save = function(bufnr)
