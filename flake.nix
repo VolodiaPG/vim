@@ -181,8 +181,10 @@
 
               # Faster than the default
               fswatch
+            ]
+            ++ (lib.optionals (pkgs.stdenv.isLinux) [
               inotify-tools
-            ];
+            ]);
           };
 
           # NOTE: lazy doesnt care if these are in startupPlugins or optionalPlugins
