@@ -213,6 +213,7 @@
                 nvim-surround
                 rainbow-delimiters-nvim
                 lazydev-nvim
+                typst-preview-nvim
                 pkgs.neovimPlugins.inlay-hints
                 pkgs.neovimPlugins.catppuccin
                 pkgs.neovimPlugins.vimtex
